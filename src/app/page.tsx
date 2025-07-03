@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail, MapPin, Phone, ExternalLink, Award, Briefcase, GraduationCap, Code, User } from 'lucide-react';
+import { Github, Linkedin, Mail, MapPin, Phone, ExternalLink, Award, GraduationCap, Code, User } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Home() {
@@ -246,7 +246,7 @@ export default function Home() {
                 <div className="flex items-start justify-between mb-4">
                   <div>
                     <h3 className="text-xl font-semibold text-slate-900 dark:text-white">Secretary of Seminar & Workshop</h3>
-                    <p className="gradient-text font-medium">CSEDU Students' Club</p>
+                    <p className="gradient-text font-medium">CSEDU Students&lsquo; Club</p>
                     <p className="text-slate-500 dark:text-slate-400">University of Dhaka</p>
                   </div>
                   <span className="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full text-sm">
@@ -416,7 +416,7 @@ export default function Home() {
               variants={itemVariants}
               className="text-xl text-slate-600 dark:text-slate-300 mb-8 max-w-2xl mx-auto"
             >
-              I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology and mathematics.
+              I&lsquo;m always open to discussing new opportunities, interesting projects, or just having a chat about technology and mathematics.
             </motion.p>
             <motion.div
               variants={itemVariants}
