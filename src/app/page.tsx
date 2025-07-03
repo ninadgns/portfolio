@@ -70,15 +70,11 @@ export default function Home() {
                   style={{ background: 'var(--accent)' }}
                   onError={(e) => { e.currentTarget.src = 'https://ui-avatars.com/api/?name=Ninad&background=ff6bcb&color=fff&size=160'; }}
                 />
-                <span className="absolute bottom-2 right-2 bg-white rounded-full p-2 shadow wave">
-                  <User className="text-accent" size={28} />
-                </span>
               </div>
             </motion.div>
             <motion.h1
               variants={itemVariants}
-              className="text-5xl sm:text-7xl font-extrabold text-transparent bg-clip-text rainbow mb-6"
-              style={{ WebkitTextFillColor: 'transparent', backgroundImage: 'linear-gradient(90deg, #ff6bcb, #6bffb4, #4facfe, #f093fb)' }}
+              className="text-5xl sm:text-7xl font-extrabold text-slate-900 dark:text-white mb-6"
             >
               Md. Muhaiminul Islam <span className="gradient-text">Ninad</span>
             </motion.h1>
