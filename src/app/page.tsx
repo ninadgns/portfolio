@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail, MapPin, Phone, ExternalLink, Award, GraduationCap, Code, User } from 'lucide-react';
+import { Github, Linkedin, Mail, MapPin, Phone, ExternalLink, Award, GraduationCap, Code} from 'lucide-react';
 import Link from 'next/link';
 
 export default function Home() {
