@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, MapPin, Phone, ExternalLink, Award, GraduationCap, Code} from 'lucide-react';
 import Link from 'next/link';
+import ThemeSwitcher from '@/components/ThemeSwitcher';
 
 export default function Home() {
   const containerVariants = {
@@ -33,15 +34,17 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <h1 className="text-xl font-bold gradient-text">Ninad</h1>
-            <div className="hidden md:flex space-x-8">
+            <div className="hidden md:flex space-x-8 items-center">
               <a href="#about" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">About</a>
               <a href="#experience" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Experience</a>
               <a href="#projects" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Projects</a>
               <a href="#achievements" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Achievements</a>
               <a href="#contact" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Contact</a>
+              <ThemeSwitcher />
             </div>
             {/* Mobile menu button */}
-            <div className="md:hidden">
+            <div className="md:hidden flex items-center gap-2">
+              <ThemeSwitcher />
               <button className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 hover-scale">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
