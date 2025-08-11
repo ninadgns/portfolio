@@ -20,30 +20,28 @@
   --spring: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
+[data-theme="dark"] {
+  --background: #0f0f0f;
+  --foreground: #f5f5f5;
+  --accent: #60a5fa;
+  --accent-hover: #3b82f6;
+  --secondary: #a78bfa;
+  --secondary-hover: #8b5cf6;
+  --muted: #9ca3af;
+  --border: #374151;
+  --success: #34d399;
+  --warning: #fbbf24;
+  --error: #f87171;
+  --shadow: 0 4px 20px 0 rgba(96, 165, 250, 0.12);
+  --shadow-lg: 0 12px 32px 0 rgba(96, 165, 250, 0.16);
+  --shadow-xl: 0 24px 48px 0 rgba(96, 165, 250, 0.20);
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0f0f0f;
-    --foreground: #f5f5f5;
-    --accent: #60a5fa;
-    --accent-hover: #3b82f6;
-    --secondary: #a78bfa;
-    --secondary-hover: #8b5cf6;
-    --muted: #9ca3af;
-    --border: #374151;
-    --success: #34d399;
-    --warning: #fbbf24;
-    --error: #f87171;
-    --shadow: 0 4px 20px 0 rgba(96, 165, 250, 0.12);
-    --shadow-lg: 0 12px 32px 0 rgba(96, 165, 250, 0.16);
-    --shadow-xl: 0 24px 48px 0 rgba(96, 165, 250, 0.20);
-  }
 }
 
 /* Base styles */
@@ -64,6 +62,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Enhanced scrollbar styling */
@@ -176,6 +175,11 @@ html {
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+[data-theme="dark"] .glass-effect {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 .floating {
   animation: float 6s ease-in-out infinite;
 }
@@ -188,6 +192,10 @@ html {
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
   background-size: 200% 100%;
   animation: shimmer 2s infinite;
+}
+
+[data-theme="dark"] .shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
 }
 
 .hover-lift {
@@ -209,8 +217,7 @@ html {
 
 .typewriter {
   overflow: hidden;
-  /* white-space: nowrap; */
-  animation: typewriter 3s steps(40, end),  step-end infinite;
+  animation: typewriter 3s steps(40, end), blink 1s step-end infinite;
   border-right: 2px solid var(--accent);
 }
 
@@ -325,6 +332,45 @@ html {
 .card-featured {
   background: linear-gradient(135deg, rgba(59, 130, 246, 0.02), rgba(139, 92, 246, 0.02));
   border: 1px solid var(--accent);
+}
+
+/* Dark mode toggle button */
+.theme-toggle {
+  position: relative;
+  width: 60px;
+  height: 30px;
+  border-radius: 15px;
+  background: var(--border);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  overflow: hidden;
+}
+
+.theme-toggle::before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--accent);
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+}
+
+[data-theme="dark"] .theme-toggle::before {
+  transform: translateX(30px);
+  background: var(--secondary);
+}
+
+.theme-toggle:hover {
+  background: var(--accent);
+}
+
+[data-theme="dark"] .theme-toggle:hover {
+  background: var(--secondary);
 }
 
 /* Status indicators */

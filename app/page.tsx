@@ -1,10 +1,35 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail, MapPin, Phone, ExternalLink, Award, GraduationCap, Code} from 'lucide-react';
+import { Github, Linkedin, Mail, MapPin, Phone, ExternalLink, Award, GraduationCap, Code, Moon, Sun } from 'lucide-react';
 import Link from 'next/link';
+import { useState, useEffect } from 'react';
 
 export default function Home() {
+  const [darkMode, setDarkMode] = useState(false);
+
+  // Check system preference and localStorage on mount
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+      setDarkMode(true);
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  }, []);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+    if (!darkMode) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+      localStorage.setItem('theme', 'light');
+    }
+  };
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -27,22 +52,46 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-slate-800">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50" style={{
+      background: darkMode ? 'linear-gradient(to bottom right, #0f172a, #1e293b)' : 'linear-gradient(to bottom right, #f8fafc, #dbeafe)'
+    }}>
       {/* Navigation */}
-      <nav className="fixed top-0 w-full glass-effect z-50 border-b border-slate-200 dark:border-slate-700">
+      <nav className="fixed top-0 w-full glass-effect z-50 border-b" style={{ borderColor: 'var(--border)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <h1 className="text-xl font-bold gradient-text">Ninad</h1>
-            <div className="hidden md:flex space-x-8">
-              <a href="#about" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">About</a>
-              <a href="#experience" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Experience</a>
-              <a href="#projects" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Projects</a>
-              <a href="#achievements" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Achievements</a>
-              <a href="#contact" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Contact</a>
+            <div className="hidden md:flex space-x-8 items-center">
+              <a href="#about" className="hover:text-blue-600 transition-colors" style={{ color: 'var(--muted)' }}>About</a>
+              <a href="#experience" className="hover:text-blue-600 transition-colors" style={{ color: 'var(--muted)' }}>Experience</a>
+              <a href="#projects" className="hover:text-blue-600 transition-colors" style={{ color: 'var(--muted)' }}>Projects</a>
+              <a href="#achievements" className="hover:text-blue-600 transition-colors" style={{ color: 'var(--muted)' }}>Achievements</a>
+              <a href="#contact" className="hover:text-blue-600 transition-colors" style={{ color: 'var(--muted)' }}>Contact</a>
+              <button
+                onClick={toggleDarkMode}
+                className="p-2 rounded-lg transition-colors hover-scale"
+                style={{ 
+                  background: 'var(--border)', 
+                  color: 'var(--muted)',
+                  border: '1px solid var(--border)'
+                }}
+              >
+                {darkMode ? <Sun size={20} /> : <Moon size={20} />}
+              </button>
             </div>
             {/* Mobile menu button */}
-            <div className="md:hidden">
-              <button className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 hover-scale">
+            <div className="md:hidden flex items-center gap-2">
+              <button
+                onClick={toggleDarkMode}
+                className="p-2 rounded-lg transition-colors hover-scale"
+                style={{ 
+                  background: 'var(--border)', 
+                  color: 'var(--muted)',
+                  border: '1px solid var(--border)'
+                }}
+              >
+                {darkMode ? <Sun size={18} /> : <Moon size={18} />}
+              </button>
+              <button className="hover:text-blue-600 hover-scale" style={{ color: 'var(--muted)' }}>
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
@@ -74,16 +123,18 @@ export default function Home() {
             </motion.div>
             <motion.h1
               variants={itemVariants}
-              className="text-5xl sm:text-7xl font-extrabold text-slate-900 dark:text-white mb-6"
+              className="text-5xl sm:text-7xl font-extrabold mb-6"
+              style={{ color: 'var(--foreground)' }}
             >
               Md. Muhaiminul Islam <span className="gradient-text">Ninad</span>
             </motion.h1>
             <motion.p
               variants={itemVariants}
-              className="text-2xl text-slate-700 dark:text-slate-200 mb-8 mx-auto pop-in"
+              className="text-2xl mb-8 mx-auto pop-in"
+              style={{ color: 'var(--muted)' }}
             >
               Third-year CSE student at the University of Dhaka with a strong background in Olympiad Mathematics and problem-solving. <br />
-              <span className="font-semibold text-accent">Web & Software Developer</span> | <span className="font-semibold text-accent-hover">Next.js & Python Enthusiast</span>
+              <span className="font-semibold gradient-text">Web & Software Developer</span> | <span className="font-semibold gradient-text">Next.js & Python Enthusiast</span>
             </motion.p>
             <motion.div
               variants={itemVariants}
@@ -108,7 +159,8 @@ export default function Home() {
             </motion.div>
             <motion.div
               variants={itemVariants}
-              className="flex items-center justify-center gap-2 text-slate-600 dark:text-slate-400 pop-in"
+              className="flex items-center justify-center gap-2 pop-in"
+              style={{ color: 'var(--muted)' }}
             >
               <MapPin size={20} />
               <span>Chankharpul, Dhaka</span>
@@ -118,7 +170,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-800">
+      <section id="about" className="py-16 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: darkMode ? '#1e293b' : '#ffffff' }}>
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial="hidden"
@@ -134,46 +186,52 @@ export default function Home() {
             </motion.h2>
             <div className="grid md:grid-cols-2 gap-12">
               <motion.div variants={itemVariants}>
-                <h3 className="text-2xl font-semibold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
+                <h3 className="text-2xl font-semibold mb-6 flex items-center gap-2" style={{ color: 'var(--foreground)' }}>
                   <GraduationCap className="text-blue-600" />
                   Education
                 </h3>
                 <div className="space-y-6">
                   <div className="card hover-lift">
-                    <h4 className="font-semibold text-slate-900 dark:text-white">University of Dhaka</h4>
-                    <p className="text-slate-600 dark:text-slate-300">CSE, 3rd Year 1st Semester</p>
+                    <h4 className="font-semibold" style={{ color: 'var(--foreground)' }}>University of Dhaka</h4>
+                    <p style={{ color: 'var(--muted)' }}>CSE, 3rd Year 1st Semester</p>
                     <p className="gradient-text font-semibold">CGPA: 3.79/4.00</p>
-                    <p className="text-sm text-slate-500 dark:text-slate-400">2022 - Present</p>
+                    <p className="text-sm" style={{ color: 'var(--muted)' }}>2022 - Present</p>
                   </div>
                   <div className="card hover-lift">
-                    <h4 className="font-semibold text-slate-900 dark:text-white">Notre Dame College</h4>
-                    <p className="text-slate-600 dark:text-slate-300">HSC</p>
+                    <h4 className="font-semibold" style={{ color: 'var(--foreground)' }}>Notre Dame College</h4>
+                    <p style={{ color: 'var(--muted)' }}>HSC</p>
                     <p className="gradient-text font-semibold">GPA: 5.00</p>
-                    <p className="text-sm text-slate-500 dark:text-slate-400">2019 - 2021</p>
+                    <p className="text-sm" style={{ color: 'var(--muted)' }}>2019 - 2021</p>
                   </div>
                 </div>
               </motion.div>
               <motion.div variants={itemVariants}>
-                <h3 className="text-2xl font-semibold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
+                <h3 className="text-2xl font-semibold mb-6 flex items-center gap-2" style={{ color: 'var(--foreground)' }}>
                   <Code className="text-blue-600" />
                   Technical Skills
                 </h3>
                 <div className="space-y-4">
                   <div>
-                    <h4 className="font-semibold text-slate-900 dark:text-white mb-2">Proficient in:</h4>
+                    <h4 className="font-semibold mb-2" style={{ color: 'var(--foreground)' }}>Proficient in:</h4>
                     <div className="flex flex-wrap gap-2">
                       {['Full Stack Web Development', 'React/NextJS', 'Python', 'Olympiad Mathematics'].map((skill) => (
-                        <span key={skill} className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm hover-scale shimmer">
+                        <span key={skill} className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm hover-scale shimmer" style={{
+                          backgroundColor: darkMode ? 'rgba(59, 130, 246, 0.2)' : 'rgba(59, 130, 246, 0.1)',
+                          color: 'var(--accent)'
+                        }}>
                           {skill}
                         </span>
                       ))}
                     </div>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-slate-900 dark:text-white mb-2">Worked with:</h4>
+                    <h4 className="font-semibold mb-2" style={{ color: 'var(--foreground)' }}>Worked with:</h4>
                     <div className="flex flex-wrap gap-2">
                       {['Rust', 'C++', 'LaTeX', 'Java', 'PostgreSQL', 'GitHub', 'Manim', 'Blender', 'Photoshop'].map((skill) => (
-                        <span key={skill} className="bg-slate-100 dark:bg-slate-600 text-slate-800 dark:text-slate-200 px-3 py-1 rounded-full text-sm hover-scale">
+                        <span key={skill} className="px-3 py-1 rounded-full text-sm hover-scale" style={{
+                          backgroundColor: 'var(--border)',
+                          color: 'var(--foreground)'
+                        }}>
                           {skill}
                         </span>
                       ))}
@@ -205,15 +263,18 @@ export default function Home() {
               <motion.div variants={itemVariants} className="card hover-lift">
                 <div className="flex items-start justify-between mb-4">
                   <div>
-                    <h3 className="text-xl font-semibold text-slate-900 dark:text-white">Full Stack Developer</h3>
+                    <h3 className="text-xl font-semibold" style={{ color: 'var(--foreground)' }}>Full Stack Developer</h3>
                     <p className="gradient-text font-medium">Askturing.Ai</p>
-                    <p className="text-slate-500 dark:text-slate-400">Remote</p>
+                    <p style={{ color: 'var(--muted)' }}>Remote</p>
                   </div>
-                  <span className="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm glow">
+                  <span className="px-3 py-1 rounded-full text-sm glow" style={{
+                    backgroundColor: darkMode ? 'rgba(16, 185, 129, 0.2)' : 'rgba(16, 185, 129, 0.1)',
+                    color: 'var(--success)'
+                  }}>
                     July 2024 - Present
                   </span>
                 </div>
-                <ul className="space-y-2 text-slate-600 dark:text-slate-300">
+                <ul className="space-y-2" style={{ color: 'var(--muted)' }}>
                   <li>• Developing and maintaining full fledged user portal with NextJS</li>
                   <li>• Developed various APIs using Python to support backend functionality and data processing</li>
                   <li>• Working with teams to design client side and server side architecture</li>
@@ -223,15 +284,18 @@ export default function Home() {
               <motion.div variants={itemVariants} className="card hover-lift">
                 <div className="flex items-start justify-between mb-4">
                   <div>
-                    <h3 className="text-xl font-semibold text-slate-900 dark:text-white">Academic Team Member</h3>
+                    <h3 className="text-xl font-semibold" style={{ color: 'var(--foreground)' }}>Academic Team Member</h3>
                     <p className="gradient-text font-medium">Bangladesh Math Olympiad</p>
-                    <p className="text-slate-500 dark:text-slate-400">Bangladesh</p>
+                    <p style={{ color: 'var(--muted)' }}>Bangladesh</p>
                   </div>
-                  <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm">
+                  <span className="px-3 py-1 rounded-full text-sm" style={{
+                    backgroundColor: darkMode ? 'rgba(59, 130, 246, 0.2)' : 'rgba(59, 130, 246, 0.1)',
+                    color: 'var(--accent)'
+                  }}>
                     2022 - Present
                   </span>
                 </div>
-                <ul className="space-y-2 text-slate-600 dark:text-slate-300">
+                <ul className="space-y-2" style={{ color: 'var(--muted)' }}>
                   <li>• Training students at Olympiad Camps</li>
                   <li>• Developing Olympiad Questions for National and Regional Olympiads</li>
                   <li>• Evaluating Answer Scripts and preparing results at National and Regional Olympiads</li>
@@ -241,15 +305,18 @@ export default function Home() {
               <motion.div variants={itemVariants} className="card hover-lift">
                 <div className="flex items-start justify-between mb-4">
                   <div>
-                    <h3 className="text-xl font-semibold text-slate-900 dark:text-white">Secretary of Seminar & Workshop</h3>
+                    <h3 className="text-xl font-semibold" style={{ color: 'var(--foreground)' }}>Secretary of Seminar & Workshop</h3>
                     <p className="gradient-text font-medium">CSEDU Students&lsquo; Club</p>
-                    <p className="text-slate-500 dark:text-slate-400">University of Dhaka</p>
+                    <p style={{ color: 'var(--muted)' }}>University of Dhaka</p>
                   </div>
-                  <span className="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full text-sm">
+                  <span className="px-3 py-1 rounded-full text-sm" style={{
+                    backgroundColor: darkMode ? 'rgba(139, 92, 246, 0.2)' : 'rgba(139, 92, 246, 0.1)',
+                    color: 'var(--secondary)'
+                  }}>
                     2023 - 2025
                   </span>
                 </div>
-                <ul className="space-y-2 text-slate-600 dark:text-slate-300">
+                <ul className="space-y-2" style={{ color: 'var(--muted)' }}>
                   <li>• Organizing events at the Department</li>
                   <li>• Collaborating with other departments of DU for inter department events</li>
                 </ul>
@@ -260,7 +327,7 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-800">
+      <section id="projects" className="py-16 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: darkMode ? '#1e293b' : '#ffffff' }}>
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial="hidden"
@@ -318,14 +385,15 @@ export default function Home() {
                   variants={itemVariants}
                   className="card hover-lift"
                 >
-                  <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-2">{project.title}</h3>
+                  <h3 className="text-xl font-semibold mb-2" style={{ color: 'var(--foreground)' }}>{project.title}</h3>
                   <p className="gradient-text text-sm mb-3">{project.tech}</p>
-                  <p className="text-slate-600 dark:text-slate-300 mb-4">{project.description}</p>
+                  <p className="mb-4" style={{ color: 'var(--muted)' }}>{project.description}</p>
                   <Link
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 transition-colors hover-scale"
+                    className="inline-flex items-center gap-2 hover:text-blue-700 transition-colors hover-scale"
+                    style={{ color: 'var(--accent)' }}
                   >
                     <Github size={16} />
                     View on GitHub
@@ -383,8 +451,8 @@ export default function Home() {
                 >
                   <Award className="text-yellow-500 mt-1 flex-shrink-0 glow" size={24} />
                   <div>
-                    <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">{achievement.title}</h3>
-                    <p className="text-slate-600 dark:text-slate-300">{achievement.description}</p>
+                    <h3 className="text-lg font-semibold mb-2" style={{ color: 'var(--foreground)' }}>{achievement.title}</h3>
+                    <p style={{ color: 'var(--muted)' }}>{achievement.description}</p>
                   </div>
                 </motion.div>
               ))}
@@ -394,7 +462,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-800">
+      <section id="contact" className="py-16 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: darkMode ? '#1e293b' : '#ffffff' }}>
         <div className="max-w-7xl mx-auto text-center">
           <motion.div
             initial="hidden"
@@ -410,7 +478,8 @@ export default function Home() {
             </motion.h2>
             <motion.p
               variants={itemVariants}
-              className="text-xl text-slate-600 dark:text-slate-300 mb-8 max-w-2xl mx-auto"
+              className="text-xl mb-8 max-w-2xl mx-auto"
+              style={{ color: 'var(--muted)' }}
             >
               I&lsquo;m always open to discussing new opportunities, interesting projects, or just having a chat about technology and mathematics.
             </motion.p>
@@ -440,9 +509,9 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 px-4 sm:px-6 lg:px-8 border-t border-slate-200 dark:border-slate-700">
+      <footer className="py-8 px-4 sm:px-6 lg:px-8 border-t" style={{ borderColor: 'var(--border)' }}>
         <div className="max-w-7xl mx-auto text-center">
-          <p className="text-slate-600 dark:text-slate-400">
+          <p style={{ color: 'var(--muted)' }}>
             © 2025 Md. Muhaiminul Islam Ninad. Built with Next.js and Tailwind CSS.
           </p>
         </div>
