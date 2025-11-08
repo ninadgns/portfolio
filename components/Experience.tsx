@@ -70,6 +70,23 @@ export default function Experience() {
                                 <li>• Collaborating with other departments of DU for inter department events</li>
                             </ul>
                         </motion.div>
+
+                        <motion.div variants={itemVariants} className="card hover-lift">
+                            <div className="flex items-start justify-between mb-4">
+                                <div>
+                                    <h3 className="text-xl font-semibold" style={{ color: 'var(--foreground)' }}>Head of HR & Coordinator</h3>
+                                    <p className="gradient-text font-medium">Notre Dame Math Club</p>
+                                    <p style={{ color: 'var(--muted)' }}>Notre Dame College</p>
+                                </div>
+                                <span className="px-3 py-1 rounded-full text-sm badge badge-secondary">
+                                    2020 – 2021
+                                </span>
+                            </div>
+                            <ul className="space-y-2" style={{ color: 'var(--muted)' }}>
+                                <li>• Arranged sessions and learnt from distinguished researchers & teachers from home & abroad</li>
+                                <li>• Organized large-scale events to enhance students' passion for the subject</li>
+                            </ul>
+                        </motion.div>
                     </div>
                 </motion.div>
             </div>
