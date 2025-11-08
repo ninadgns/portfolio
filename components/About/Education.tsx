@@ -14,8 +14,8 @@ export default function Education(){
                 <div className="card hover-lift">
                   <h4 className="font-semibold" style={{ color: 'var(--foreground)' }}>University of Dhaka</h4>
                   <p style={{ color: 'var(--muted)' }}>B.Sc. in Computer Science & Engineering</p>
-                  <p style={{ color: 'var(--muted)' }}>3rd Year 1st Semester</p>
-                  <p className="gradient-text font-semibold">CGPA: 3.79/4.00</p>
+                  <p style={{ color: 'var(--muted)' }}>3rd Year 2nd Semester</p>
+                  <p className="gradient-text font-semibold">CGPA: 3.77/4.00</p>
                   <p className="text-sm" style={{ color: 'var(--muted)' }}>2022 - Present</p>
                   <div className="mt-2">
                     <p className="text-sm" style={{ color: 'var(--muted)' }}>
