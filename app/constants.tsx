@@ -19,7 +19,7 @@ export const itemVariants = {
   }
 };
 
-export const proficient = ['Full Stack Web Development (Python, PostgreSQL, React/NextJS)', 'Olympiad Mathematics']
+export const proficient = ['Full Stack Web Development', 'Python',' PostgreSQL','React/NextJS', 'Olympiad Mathematics']
 export const workedWith = ['C++', 'Latex', 'Java', 'Rust', 'Github', 'Manim', 'Google Sheets', 'Blender', 'Photoshop']
 export const interests = ['Machine Learning/AI', 'Web3/Blockchain', 'Competitive Programming', 'UI/UX Design', 'Game Development']
 export const projects = [
