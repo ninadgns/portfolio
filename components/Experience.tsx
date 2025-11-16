@@ -21,18 +21,18 @@ export default function Experience() {
                         <motion.div variants={itemVariants} className="card hover-lift">
                             <div className="flex items-start justify-between mb-4">
                                 <div>
-                                    <h3 className="text-xl font-semibold" style={{ color: 'var(--foreground)' }}>Full Stack Developer</h3>
+                                    <h3 className="text-xl font-semibold" style={{ color: 'var(--foreground)' }}>Full Stack Software Engineer</h3>
                                     <p className="gradient-text font-medium">Askturing.Ai</p>
                                     <p style={{ color: 'var(--muted)' }}>Remote</p>
                                 </div>
                                 <span className="px-3 py-1 rounded-full text-sm badge badge-primary">
-                                    July 2024 - Present
+                                    July 2024 - Present, Full-time
                                 </span>
                             </div>
                             <ul className="space-y-2" style={{ color: 'var(--muted)' }}>
-                                <li>• Developing and maintaining full fledged user portal with NextJS</li>
-                                <li>• Developed various APIs using Python to support backend functionality and data processing</li>
-                                <li>• Working with teams to design client side and server side architecture</li>
+                                <li>• Develop and maintain a full-fledged user portal using Next.js</li>
+                                <li>• Build and optimise Python-based APIs integrated with PostgreSQL for backend functionality and data processing</li>
+                                <li>• Collaborate effectively with team members across different time zones in an asynchronous workflow</li>
                             </ul>
                         </motion.div>
 

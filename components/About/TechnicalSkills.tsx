@@ -17,7 +17,7 @@ export default function TechnicalSkills() {
                     {proficient.map((skill) => (
                       <span
                         key={skill}
-                        className="px-4 py-2 rounded-full text-sm hover-scale shimmer"
+                        className="px-4 py-2 rounded-full text-sm hover-scale"
                         style={{
                           backgroundColor: 'rgba(59, 130, 246, 0.1)',
                           color: 'var(--accent)'
@@ -34,10 +34,10 @@ export default function TechnicalSkills() {
                     {workedWith.map((skill) => (
                       <span
                         key={skill}
-                        className="px-3 py-2 rounded-full text-sm hover-scale"
+                        className="px-4 py-2 rounded-full text-sm hover-scale"
                         style={{
-                          backgroundColor: 'var(--border)',
-                          color: 'var(--foreground)'
+                          backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                          color: 'var(--accent)'
                         }}
                       >
                         {skill}
@@ -51,10 +51,10 @@ export default function TechnicalSkills() {
                     {interests.map((interest) => (
                       <span
                         key={interest}
-                        className="px-3 py-2 rounded-full text-sm hover-scale"
+                        className="px-4 py-2 rounded-full text-sm hover-scale"
                         style={{
-                          backgroundColor: 'rgba(139, 92, 246, 0.1)',
-                          color: 'var(--secondary)'
+                          backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                          color: 'var(--accent)'
                         }}
                       >
                         {interest}

@@ -13,31 +13,15 @@ export default function Education(){
               <div className="space-y-4">
                 <div className="card hover-lift">
                   <h4 className="font-semibold" style={{ color: 'var(--foreground)' }}>University of Dhaka</h4>
-                  <p style={{ color: 'var(--muted)' }}>B.Sc. in Computer Science & Engineering</p>
-                  <p style={{ color: 'var(--muted)' }}>3rd Year 2nd Semester</p>
-                  <p className="gradient-text font-semibold">CGPA: 3.77/4.00</p>
-                  <p className="text-sm" style={{ color: 'var(--muted)' }}>2022 - Present</p>
-                  <div className="mt-2">
-                    <p className="text-sm" style={{ color: 'var(--muted)' }}>
-                      Relevant Coursework: Data Structures, Algorithms, Database Systems,
-                      Software Engineering, Computer Networks, Operating Systems
-                    </p>
-                  </div>
+                  <p style={{ color: 'var(--muted)' }}>Dhaka, Bangladesh</p>
+                  <p style={{ color: 'var(--muted)' }}>CSE, 3rd Year 2nd Semester; <span className="gradient-text font-semibold">CGPA: 3.77/4.00</span></p>
+                  <p className="text-sm" style={{ color: 'var(--muted)' }}>September 2022 - November 2026 (Expected)</p>
                 </div>
                 <div className="card hover-lift">
                   <h4 className="font-semibold" style={{ color: 'var(--foreground)' }}>Notre Dame College</h4>
-                  <p style={{ color: 'var(--muted)' }}>Higher Secondary Certificate (Science)</p>
-                  <p className="gradient-text font-semibold">GPA: 5.00/5.00</p>
+                  <p style={{ color: 'var(--muted)' }}>Dhaka, Bangladesh</p>
+                  <p style={{ color: 'var(--muted)' }}>HSC; <span className="gradient-text font-semibold">GPA: 5.00</span></p>
                   <p className="text-sm" style={{ color: 'var(--muted)' }}>2019 - 2021</p>
-                  <p className="text-sm mt-1" style={{ color: 'var(--muted)' }}>
-                    Major: Physics, Chemistry, Mathematics, Biology
-                  </p>
-                </div>
-                <div className="card hover-lift">
-                  <h4 className="font-semibold" style={{ color: 'var(--foreground)' }}>Jamalpur Zilla School</h4>
-                  <p style={{ color: 'var(--muted)' }}>Secondary School Certificate (Science)</p>
-                  <p className="gradient-text font-semibold">GPA: 5.00/5.00</p>
-                  <p className="text-sm" style={{ color: 'var(--muted)' }}>2011 - 2019</p>
                 </div>
               </div>
             </motion.div>

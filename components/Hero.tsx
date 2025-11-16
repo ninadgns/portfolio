@@ -37,8 +37,7 @@ export default function Hero() {
                         className="text-2xl mb-8 mx-auto pop-in"
                         style={{ color: 'var(--muted)' }}
                     >
-                        Third-year CSE student at the University of Dhaka with a strong background in Olympiad Mathematics and problem-solving. <br />
-                        <span className="font-semibold gradient-text">Web & Software Developer,</span> focused on <span className="font-semibold gradient-text">Next.js and Python</span>
+                        Third-year CSE student at the University of Dhaka with a strong background in Olympiad Mathematics and problem-solving. Experienced in web and software development, currently working on building AI based solution using Python and NextJS.
                     </motion.p>
                     <motion.div
                         variants={itemVariants}
