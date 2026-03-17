@@ -13,7 +13,7 @@ export default function Experience() {
                 >
                     <motion.h2
                         variants={itemVariants}
-                        className="text-3xl font-bold text-center gradient-text mb-12"
+                        className="text-3xl font-black text-center gradient-text mb-12 tracking-tight"
                     >
                         Work Experience
                     </motion.h2>

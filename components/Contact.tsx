@@ -18,7 +18,7 @@ export default function Contact(){
             <div className="text-left md:w-2/3">
               <motion.h2
                 variants={itemVariants}
-                className="text-3xl font-bold gradient-text mb-8"
+                className="text-3xl font-black gradient-text mb-8 tracking-tight"
               >
                 Get In Touch
               </motion.h2>

@@ -19,7 +19,7 @@ export default function Achievements() {
           >
             <motion.h2
               variants={itemVariants}
-              className="text-3xl font-bold text-center gradient-text mb-12"
+              className="text-3xl font-black text-center gradient-text mb-12 tracking-tight"
             >
               Achievements
             </motion.h2>
@@ -39,14 +39,14 @@ export default function Achievements() {
                 >
                   <div className="flex flex-col h-full">
                     <div className="flex items-start gap-3 mb-3">
-                      <Award className="text-yellow-500 flex-shrink-0 glow" size={20} />
+                      <Award className="flex-shrink-0" size={20} style={{ color: 'var(--yellow)' }} />
                       <h3 className="text-lg font-semibold flex-1" style={{ color: 'var(--foreground)' }}>
                         {achievement.link ? (
                           <Link 
                             href={achievement.link} 
                             target="_blank" 
                             rel="noopener noreferrer"
-                            className="hover:text-blue-700 transition-colors inline-flex items-center gap-1"
+                            className="transition-colors inline-flex items-center gap-1 hover:underline"
                             style={{ color: 'var(--foreground)' }}
                           >
                             {achievement.title}

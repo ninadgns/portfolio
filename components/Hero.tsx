@@ -19,15 +19,15 @@ export default function Hero() {
                             <img
                                 src="/profile.jpg"
                                 alt="Profile"
-                                className="w-40 h-40 object-cover rounded-full shadow-xl border-4 border-accent pop-in"
-                                style={{ background: 'var(--accent)' }}
-                                onError={(e) => { e.currentTarget.src = 'https://ui-avatars.com/api/?name=Ninad&background=ff6bcb&color=fff&size=160'; }}
+                                className="w-40 h-40 object-cover pop-in border-4 border-[var(--border)]"
+                                style={{ background: 'var(--accent)', boxShadow: '6px 6px 0 0 var(--border)' }}
+                                onError={(e) => { e.currentTarget.src = 'https://ui-avatars.com/api/?name=Ninad&background=2563eb&color=fff&size=160'; }}
                             />
                         </div>
                     </motion.div>
                     <motion.h1
                         variants={itemVariants}
-                        className="text-5xl sm:text-7xl font-extrabold mb-6"
+                        className="text-5xl sm:text-7xl font-black mb-6 tracking-tight"
                         style={{ color: 'var(--foreground)' }}
                     >
                         Md. Muhaiminul Islam <span className="gradient-text">Ninad</span>

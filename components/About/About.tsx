@@ -17,7 +17,7 @@ export default function About() {
         >
           <motion.h2
             variants={itemVariants}
-            className="text-3xl font-bold text-center gradient-text mb-12"
+            className="text-3xl font-black text-center gradient-text mb-12 tracking-tight"
           >
             About Me
           </motion.h2>

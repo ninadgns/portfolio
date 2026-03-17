@@ -38,9 +38,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50" style={{
-      background: darkMode ? 'linear-gradient(to bottom right, #0f172a, #1e293b)' : 'linear-gradient(to bottom right, #f8fafc, #dbeafe)'
-    }}>
+    <div className="min-h-screen" style={{ background: 'var(--background)' }}>
       <Navigation darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <Hero />
       <About />

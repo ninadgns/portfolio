@@ -21,7 +21,7 @@ export default function Projects(){
           >
             <motion.h2
               variants={itemVariants}
-              className="text-3xl font-bold text-center gradient-text mb-12"
+              className="text-3xl font-black text-center gradient-text mb-12 tracking-tight"
             >
               Featured Projects
             </motion.h2>
@@ -106,8 +106,8 @@ export default function Projects(){
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 hover:text-blue-700 transition-colors hover-scale text-sm"
-                        style={{ color: 'var(--accent)' }}
+                        className="inline-flex items-center gap-2 font-semibold transition-colors hover-scale text-sm border-b-2 border-[var(--accent)]"
+                        style={{ color: 'var(--foreground)' }}
                       >
                         <Github size={16} />
                         GitHub
@@ -118,8 +118,8 @@ export default function Projects(){
                           href={project.githubFrontend}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 hover:text-blue-700 transition-colors hover-scale text-sm"
-                          style={{ color: 'var(--accent)' }}
+                          className="inline-flex items-center gap-2 font-semibold transition-colors hover-scale text-sm border-b-2 border-[var(--accent)]"
+                          style={{ color: 'var(--foreground)' }}
                         >
                           <Github size={16} />
                           Frontend
@@ -131,8 +131,8 @@ export default function Projects(){
                           href={project.githubBackend}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 hover:text-blue-700 transition-colors hover-scale text-sm"
-                          style={{ color: 'var(--accent)' }}
+                          className="inline-flex items-center gap-2 font-semibold transition-colors hover-scale text-sm border-b-2 border-[var(--accent)]"
+                          style={{ color: 'var(--foreground)' }}
                         >
                           <Github size={16} />
                           Backend
