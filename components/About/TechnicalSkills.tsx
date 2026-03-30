@@ -17,7 +17,7 @@ export default function TechnicalSkills() {
                     {proficient.map((skill) => (
                       <span
                         key={skill}
-                        className="px-4 py-2 text-sm font-semibold hover-scale border-2 border-[var(--border)]"
+                        className="px-4 py-2 text-sm font-semibold hover-scale border-[3px] border-[var(--border)]"
                         style={{
                           backgroundColor: 'var(--yellow)',
                           color: 'var(--foreground)'
@@ -34,7 +34,7 @@ export default function TechnicalSkills() {
                     {workedWith.map((skill) => (
                       <span
                         key={skill}
-                        className="px-4 py-2 text-sm font-semibold hover-scale border-2 border-[var(--border)]"
+                        className="px-4 py-2 text-sm font-semibold hover-scale border-[3px] border-[var(--border)]"
                         style={{
                           backgroundColor: 'var(--background)',
                           color: 'var(--foreground)'
@@ -51,7 +51,7 @@ export default function TechnicalSkills() {
                     {interests.map((interest) => (
                       <span
                         key={interest}
-                        className="px-4 py-2 text-sm font-semibold hover-scale border-2 border-[var(--border)]"
+                        className="px-4 py-2 text-sm font-semibold hover-scale border-[3px] border-[var(--border)]"
                         style={{
                           backgroundColor: 'var(--accent)',
                           color: 'white'

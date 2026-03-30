@@ -275,11 +275,12 @@ html {
 }
 
 .hover-scale {
-  transition: transform 0.15s var(--spring);
+  transition: var(--transition);
 }
 
 .hover-scale:hover {
-  transform: scale(1.02);
+  transform: translate(-2px, -2px);
+  box-shadow: 2px 2px 0 0 var(--border);
 }
 
 /* Focus: thick outline */
@@ -343,6 +344,7 @@ html {
   }
   .hover-scale:hover {
     transform: none;
+    box-shadow: none;
   }
 }
 

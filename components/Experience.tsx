@@ -25,7 +25,7 @@ export default function Experience() {
                                     <p className="gradient-text font-medium">Askturing.Ai</p>
                                     <p style={{ color: 'var(--muted)' }}>Remote</p>
                                 </div>
-                                <span className="px-3 py-1 rounded-full text-sm badge badge-primary">
+                                <span className="px-3 py-1 text-sm badge badge-primary">
                                     July 2024 - Present, Full-time
                                 </span>
                             </div>
@@ -43,7 +43,7 @@ export default function Experience() {
                                     <p className="gradient-text font-medium">Bangladesh Math Olympiad</p>
                                     <p style={{ color: 'var(--muted)' }}>Bangladesh</p>
                                 </div>
-                                <span className="px-3 py-1 rounded-full text-sm badge badge-primary">
+                                <span className="px-3 py-1 text-sm badge badge-primary">
                                     2022 - Present
                                 </span>
                             </div>
@@ -61,7 +61,7 @@ export default function Experience() {
                                     <p className="gradient-text font-medium">CSEDU Students&lsquo; Club</p>
                                     <p style={{ color: 'var(--muted)' }}>University of Dhaka</p>
                                 </div>
-                                <span className="px-3 py-1 rounded-full text-sm badge badge-secondary">
+                                <span className="px-3 py-1 text-sm badge badge-secondary">
                                     2023 - 2025
                                 </span>
                             </div>
@@ -78,7 +78,7 @@ export default function Experience() {
                                     <p className="gradient-text font-medium">Notre Dame Math Club</p>
                                     <p style={{ color: 'var(--muted)' }}>Notre Dame College</p>
                                 </div>
-                                <span className="px-3 py-1 rounded-full text-sm badge badge-secondary">
+                                <span className="px-3 py-1 text-sm badge badge-secondary">
                                     2020 – 2021
                                 </span>
                             </div>

@@ -1,8 +1,8 @@
 import { containerVariants, interests, itemVariants, proficient, projects, workedWith } from '@/app/constants';
 import Hero from '@/components/Hero';
 import Navigation from '@/components/Navigation';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Github, Linkedin, Mail, MapPin, Phone, ExternalLink, Award, GraduationCap, Code, Moon, Sun } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Github, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
@@ -33,19 +33,18 @@ export default function Projects(){
                   className="card hover-lift relative"
                   onMouseEnter={() => setHoveredIndex(index)}
                   onMouseLeave={() => setHoveredIndex(null)}
-                  style={{ 
-                    minHeight: hoveredIndex === index ? 'auto' : '280px',
+                  style={{
+                    minHeight: '280px',
                     alignSelf: 'start',
-                    height: 'auto'
                   }}
                 >
                   <div className="flex flex-col">
                     <div className="flex items-start justify-between mb-2">
                       <h3 className="text-xl font-semibold" style={{ color: 'var(--foreground)' }}>{project.title}</h3>
                     </div>
-                    
+
                     <p className="gradient-text text-sm mb-2">{project.tech}</p>
-                    
+
                     <div className="flex flex-wrap gap-2 mb-3">
                       {project.projectType && (
                         <span className="badge badge-primary text-xs">{project.projectType}</span>
@@ -54,59 +53,48 @@ export default function Projects(){
                         <span className="badge badge-secondary text-xs">{project.groupSize}</span>
                       )}
                     </div>
-                    
-                    <motion.div 
-                      className="mb-4"
-                      layout
-                      transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
-                    >
-                      <AnimatePresence mode="wait">
-                        {hoveredIndex === index && project.details ? (
-                          <motion.div
-                            key="details"
-                            initial={{ opacity: 0, y: -8 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: 8 }}
-                            transition={{ 
-                              duration: 0.2,
-                              ease: [0.4, 0, 0.2, 1]
-                            }}
-                            className="overflow-hidden"
-                          >
-                            <ul className="space-y-2 text-sm" style={{ color: 'var(--muted)' }}>
-                              {project.details.map((detail, detailIndex) => (
-                                <li key={detailIndex} className="flex items-start gap-2">
-                                  <span className="text-xs mt-1.5" style={{ color: 'var(--accent)' }}>•</span>
-                                  <span>{detail}</span>
-                                </li>
-                              ))}
-                            </ul>
-                          </motion.div>
-                        ) : (
-                          <motion.p
-                            key="description"
-                            initial={{ opacity: 0, y: 8 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -8 }}
-                            transition={{ 
-                              duration: 0.2,
-                              ease: [0.4, 0, 0.2, 1]
-                            }}
-                            className="text-sm"
-                            style={{ color: 'var(--muted)' }}
-                          >
-                            {project.description}
-                          </motion.p>
-                        )}
-                      </AnimatePresence>
-                    </motion.div>
-                    
+
+                    <div className="mb-4">
+                      <motion.p
+                        animate={{
+                          opacity: hoveredIndex === index && project.details ? 0 : 1,
+                          height: hoveredIndex === index && project.details ? 0 : 'auto',
+                        }}
+                        transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
+                        style={{ overflow: 'hidden', color: 'var(--muted)' }}
+                        className="text-sm"
+                      >
+                        {project.description}
+                      </motion.p>
+
+                      {project.details && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{
+                            height: hoveredIndex === index ? 'auto' : 0,
+                            opacity: hoveredIndex === index ? 1 : 0,
+                          }}
+                          transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
+                          style={{ overflow: 'hidden' }}
+                        >
+                          <ul className="space-y-2 text-sm" style={{ color: 'var(--muted)' }}>
+                            {project.details.map((detail, detailIndex) => (
+                              <li key={detailIndex} className="flex items-start gap-2">
+                                <span className="text-xs mt-1.5" style={{ color: 'var(--accent)' }}>•</span>
+                                <span>{detail}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </motion.div>
+                      )}
+                    </div>
+
                     <div className="mt-auto pt-4 flex flex-wrap gap-3">
                       <Link
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 font-semibold transition-colors hover-scale text-sm border-b-2 border-[var(--accent)]"
+                        className="inline-flex items-center gap-2 font-semibold transition-colors hover-scale text-sm border-b-[3px] border-[var(--accent)]"
                         style={{ color: 'var(--foreground)' }}
                       >
                         <Github size={16} />
@@ -118,7 +106,7 @@ export default function Projects(){
                           href={project.githubFrontend}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 font-semibold transition-colors hover-scale text-sm border-b-2 border-[var(--accent)]"
+                          className="inline-flex items-center gap-2 font-semibold transition-colors hover-scale text-sm border-b-[3px] border-[var(--accent)]"
                           style={{ color: 'var(--foreground)' }}
                         >
                           <Github size={16} />
@@ -131,7 +119,7 @@ export default function Projects(){
                           href={project.githubBackend}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 font-semibold transition-colors hover-scale text-sm border-b-2 border-[var(--accent)]"
+                          className="inline-flex items-center gap-2 font-semibold transition-colors hover-scale text-sm border-b-[3px] border-[var(--accent)]"
                           style={{ color: 'var(--foreground)' }}
                         >
                           <Github size={16} />
