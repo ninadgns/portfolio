@@ -7,7 +7,7 @@ export default function Education(){
     return (
         <motion.div variants={itemVariants}>
               <h3 className="text-2xl font-semibold mb-6 flex items-center gap-2" style={{ color: 'var(--foreground)' }}>
-                <GraduationCap className="text-blue-600" />
+                <GraduationCap style={{ color: 'var(--accent)' }} />
                 Education
               </h3>
               <div className="space-y-4">

@@ -121,6 +121,13 @@ export const achievements = [
     ]
   },
   {
+    title: "2nd Place at Al-Khwarizmi CTF Contest 2025",
+    description: "Secured second position as part of a four-member team in this nationwide cybersecurity CTF competition, part of the Al-Khwarizmi Science Fest 2025.",
+    details: [
+      "Secured second position as part of a four-member team in this nationwide cybersecurity Capture The Flag (CTF) competition, part of the Al-Khwarizmi Science Fest 2025, competing against the best teams from across Bangladesh in real-world cybersecurity scenarios and challenges."
+    ]
+  },
+  {
     title: "1st Place at DU CTF 2024",
     description: "Member of team 'DU_MPLING' in this university-wide Capture The Flag cybersecurity competition.",
     details: [

@@ -19,15 +19,15 @@ export default function Hero() {
                             <img
                                 src="/profile.jpg"
                                 alt="Profile"
-                                className="w-40 h-40 object-cover rounded-full shadow-xl border-4 border-accent pop-in"
-                                style={{ background: 'var(--accent)' }}
-                                onError={(e) => { e.currentTarget.src = 'https://ui-avatars.com/api/?name=Ninad&background=ff6bcb&color=fff&size=160'; }}
+                                className="w-40 h-40 object-cover pop-in border-4 border-[var(--border)]"
+                                style={{ background: 'var(--accent)', boxShadow: '6px 6px 0 0 var(--border)' }}
+                                onError={(e) => { e.currentTarget.src = 'https://ui-avatars.com/api/?name=Ninad&background=2563eb&color=fff&size=160'; }}
                             />
                         </div>
                     </motion.div>
                     <motion.h1
                         variants={itemVariants}
-                        className="text-5xl sm:text-7xl font-extrabold mb-6"
+                        className="text-5xl sm:text-7xl font-black mb-6 tracking-tight"
                         style={{ color: 'var(--foreground)' }}
                     >
                         Md. Muhaiminul Islam <span className="gradient-text">Ninad</span>
@@ -43,19 +43,19 @@ export default function Hero() {
                         variants={itemVariants}
                         className="flex flex-wrap justify-center gap-4 mb-8"
                     >
-                        <Link href="tel:01799525733" className="btn-primary hover-scale pop-in flex items-center gap-2">
+                        <Link href="tel:01799525733" className="btn-primary pop-in flex items-center gap-2">
                             <Phone size={20} />
                             Call
                         </Link>
-                        <Link href="mailto:ninadgns@gmail.com" className="btn-primary hover-scale pop-in flex items-center gap-2">
+                        <Link href="mailto:ninadgns@gmail.com" className="btn-primary pop-in flex items-center gap-2">
                             <Mail size={20} />
                             Email
                         </Link>
-                        <Link href="https://www.linkedin.com/in/ninadgns" className="btn-primary hover-scale pop-in flex items-center gap-2">
+                        <Link href="https://www.linkedin.com/in/ninadgns" className="btn-primary pop-in flex items-center gap-2">
                             <Linkedin size={20} />
                             LinkedIn
                         </Link>
-                        <Link href="https://github.com/ninadgns" className="btn-primary hover-scale pop-in flex items-center gap-2">
+                        <Link href="https://github.com/ninadgns" className="btn-primary pop-in flex items-center gap-2">
                             <Github size={20} />
                             GitHub
                         </Link>

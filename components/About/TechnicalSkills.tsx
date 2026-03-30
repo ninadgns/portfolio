@@ -7,7 +7,7 @@ export default function TechnicalSkills() {
   return (
     <motion.div variants={itemVariants}>
               <h3 className="text-2xl font-semibold mb-6 flex items-center gap-2" style={{ color: 'var(--foreground)' }}>
-                <Code className="text-blue-600" />
+                <Code style={{ color: 'var(--accent)' }} />
                 Technical Skills
               </h3>
               <div className="space-y-6">
@@ -17,10 +17,10 @@ export default function TechnicalSkills() {
                     {proficient.map((skill) => (
                       <span
                         key={skill}
-                        className="px-4 py-2 rounded-full text-sm hover-scale"
+                        className="px-4 py-2 text-sm font-semibold hover-scale border-[3px] border-[var(--border)]"
                         style={{
-                          backgroundColor: 'rgba(59, 130, 246, 0.1)',
-                          color: 'var(--accent)'
+                          backgroundColor: 'var(--yellow)',
+                          color: 'var(--foreground)'
                         }}
                       >
                         {skill}
@@ -34,10 +34,10 @@ export default function TechnicalSkills() {
                     {workedWith.map((skill) => (
                       <span
                         key={skill}
-                        className="px-4 py-2 rounded-full text-sm hover-scale"
+                        className="px-4 py-2 text-sm font-semibold hover-scale border-[3px] border-[var(--border)]"
                         style={{
-                          backgroundColor: 'rgba(59, 130, 246, 0.1)',
-                          color: 'var(--accent)'
+                          backgroundColor: 'var(--background)',
+                          color: 'var(--foreground)'
                         }}
                       >
                         {skill}
@@ -51,10 +51,10 @@ export default function TechnicalSkills() {
                     {interests.map((interest) => (
                       <span
                         key={interest}
-                        className="px-4 py-2 rounded-full text-sm hover-scale"
+                        className="px-4 py-2 text-sm font-semibold hover-scale border-[3px] border-[var(--border)]"
                         style={{
-                          backgroundColor: 'rgba(59, 130, 246, 0.1)',
-                          color: 'var(--accent)'
+                          backgroundColor: 'var(--accent)',
+                          color: 'white'
                         }}
                       >
                         {interest}
