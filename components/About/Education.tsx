@@ -14,8 +14,8 @@ export default function Education(){
                 <div className="card hover-lift">
                   <h4 className="font-semibold" style={{ color: 'var(--foreground)' }}>University of Dhaka</h4>
                   <p style={{ color: 'var(--muted)' }}>Dhaka, Bangladesh</p>
-                  <p style={{ color: 'var(--muted)' }}>CSE, 3rd Year 2nd Semester; <span className="gradient-text font-semibold">CGPA: 3.77/4.00</span></p>
-                  <p className="text-sm" style={{ color: 'var(--muted)' }}>September 2022 - November 2026 (Expected)</p>
+                  <p style={{ color: 'var(--muted)' }}>CSE, 4th Year 1st Semester; <span className="gradient-text font-semibold">CGPA: 3.77/4.00</span></p>
+                  <p className="text-sm" style={{ color: 'var(--muted)' }}>September 2022 - December 2026 (Expected)</p>
                 </div>
                 <div className="card hover-lift">
                   <h4 className="font-semibold" style={{ color: 'var(--foreground)' }}>Notre Dame College</h4>

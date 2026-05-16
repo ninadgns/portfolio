@@ -26,13 +26,14 @@ export default function Experience() {
                                     <p style={{ color: 'var(--muted)' }}>Remote</p>
                                 </div>
                                 <span className="px-3 py-1 text-sm badge badge-primary">
-                                    July 2024 - Present, Full-time
+                                    July 2024 - May 2026, Full-time
                                 </span>
                             </div>
                             <ul className="space-y-2" style={{ color: 'var(--muted)' }}>
                                 <li>• Develop and maintain a full-fledged user portal using Next.js</li>
+                                <li>• Leveraged AI-driven workflows via Cursor and Claude Code to fully automate routine tasks and systematically plan, architect, and fine-tune large-scale feature improvements</li>
                                 <li>• Build and optimise Python-based APIs integrated with PostgreSQL for backend functionality and data processing</li>
-                                <li>• Collaborate effectively with team members across different time zones in an asynchronous workflow</li>
+                                <li>• Collaborate with team members across different time zones in an asynchronous workflow</li>
                             </ul>
                         </motion.div>
 

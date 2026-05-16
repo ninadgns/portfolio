@@ -24,63 +24,17 @@ export const workedWith = ['C++', 'Latex', 'Java', 'Rust', 'Github', 'Manim', 'G
 export const interests = ['Machine Learning/AI', 'Web3/Blockchain', 'Competitive Programming', 'UI/UX Design', 'Game Development']
 export const projects = [
   {
-    title: "AI Study Helper",
-    tech: "Next.js, FastAPI, ChromaDB, Gemini API",
-    description: "Full-stack AI-powered document Q&A system using Retrieval-Augmented Generation (RAG) for intelligent study assistance.",
-    projectType: "Academic Project (Ongoing)",
-    groupSize: "Group of 4",
-    details: [
-      "Full-stack AI-powered document Q&A system using Retrieval-Augmented Generation (RAG) for intelligent study assistance. Students can upload PDF documents and ask natural language questions to receive context-aware answers.",
-      "Built FastAPI backend with ChromaDB vector database for semantic search and Google Gemini API for embeddings and LLM responses. Implemented Celery with Redis for asynchronous PDF processing.",
-      "Developed Next.js frontend with Supabase authentication and persistent chat sessions. Features multi-user support with isolated document collections per user."
-    ],
-    github: "https://github.com/Adha-KG/"
-  },
-  {
-    title: "KitchenMate",
-    tech: "Flutter, Dart, Firebase, Supabase",
-    description: "Cross-platform mobile app for smart cooking assistance with ingredient management, recipe discovery, custom timers, and offline functionality.",
-    groupSize: "Group of 4",
-    details: [
-      "Cross-platform mobile app for smart cooking assistance with ingredient management, recipe discovery, custom timers, and offline functionality. Implemented email/Google authentication, recipe search/filter, and developed the to-do list feature.",
-      "Contributed to Firebase and Supabase integration, handling initial connection and schema setup and ongoing database maintenance."
-    ],
-    github: "https://github.com/ninadgns/Android-Project-Pink-Flag"
-  },
-  {
-    title: "TEMS Academy LMS",
-    tech: "Next.js 14, TypeScript, Supabase, PDF Generation",
-    description: "Full-stack Learning Management System for TEMS Academy with automated PDF report generation and role-based access control.",
-    projectType: "Personal Project",
-    details: [
-      "Developed a full-stack Learning Management System (LMS) for TEMS Academy, an Olympiad Math coaching center, where I used to work as an Olympiad math trainer.",
-      "Seeing them struggling with spreadsheet's repetitive tasks, I made this to streamline managing student's data (exam scores and rank history) and weekly exam's result generation (PDF Resultsheet). Built with Next.js 14 and TypeScript with Supabase PostgreSQL as Database for storage, featuring a mobile-responsive UI."
-    ],
-    github: "https://github.com/ninadgns/TEMS-LMS"
-  },
-  {
-    title: "NutriCulinary",
-    tech: "Next.js, TypeScript, Supabase, Tailwind CSS",
-    description: "Full-stack personalized meal planning platform with recipe recommendations based on dietary preferences, nutritional goals, and available ingredients.",
+    title: "Hopper",
+    tech: "Go, gRPC, Python, FastAPI, K8s, NATS, PostgreSQL, Docker",
+    description: "Distributed, microservices-based VM cloud platform with a gRPC orchestration engine interfacing with the Kubernetes API.",
     projectType: "Academic Project",
-    groupSize: "Group of 2",
+    groupSize: "Group Project",
     details: [
-      "Full-stack personalized meal planning platform with recipe recommendations based on dietary preferences, nutritional goals, and available ingredients. Features admin dashboard and real-time data synchronization.",
-      "Implemented frontend logic for data fetching, processing, and display, including the admin dashboard and user authentication.",
-      "Managed Supabase integration with Next.js, ensuring seamless data flow."
+      "Co-architected a distributed, microservices-based VM cloud platform, developing a gRPC orchestration engine in Go to interface with the Kubernetes API.",
+      "Authored domain models with complex transactional logic, including an immutable double-entry credit ledger secured by PostgreSQL advisory locks.",
+      "Implemented real-time metrics streaming via NATS JetStream and secured multi-service containerization using Docker, Compose, and Kubernetes."
     ],
-    github: "https://github.com/ninadgns/meal-planner"
-  },
-  {
-    title: "CGPA Calculator",
-    tech: "React, HTML, CSS, JavaScript",
-    description: "CGPA Calculator used by CSEDU students, featuring calculations for theory and lab subjects with mobile-responsive design.",
-    projectType: "Personal Project",
-    details: [
-      "Built a CGPA Calculator as a hobby in my first year, using React.",
-      "This is used by my batchmates regularly, featuring calculations for theory and lab subjects, including previous CGPA, with a mobile-responsive design."
-    ],
-    github: "https://github.com/ninadgns/ninadgns.github.io/tree/main/CGPASource"
+    github: "https://github.com/crevios/hopper"
   },
   {
     title: "SecureFile",
@@ -98,17 +52,75 @@ export const projects = [
     githubFrontend: "https://github.com/ninadgns/networking-project-frontend"
   },
   {
-    title: "BookStay - Hotel Booking App",
-    tech: "JavaFX, PostgreSQL, Maven",
-    description: "Desktop hotel booking platform with multi-user authentication, real-time chat, and comprehensive booking management.",
-    projectType: "Academic Project",
-    groupSize: "Group of 3",
+    title: "KitchenMate",
+    tech: "Flutter, Dart, Firebase, Supabase",
+    description: "Cross-platform mobile app for smart cooking assistance with ingredient management, recipe discovery, custom timers, and offline functionality.",
+    groupSize: "Group of 4",
     details: [
-      "Desktop hotel booking platform with multi-user authentication, real-time chat, and comprehensive booking management. Implements Decorator, Factory, Strategy, and Observer design patterns.",
-      "Co-developed the real-time, multi-user chat functionality, including database persistence and backend logic.",
-      "Implemented the client abstraction layer for Supabase integration using JDBC, enabling database connectivity from Java."
+      "Cross-platform mobile app for smart cooking assistance with ingredient management, recipe discovery, custom timers, and offline functionality. Implemented email/Google authentication, recipe search/filter, and developed the to-do list feature.",
+      "Contributed to Firebase and Supabase integration, handling initial connection and schema setup and ongoing database maintenance."
     ],
-    github: "https://github.com/ninadgns/OOP-Project"
+    github: "https://github.com/ninadgns/Android-Project-Pink-Flag"
+  },
+  {
+    title: "AI Study Helper",
+    tech: "Next.js, FastAPI, ChromaDB, Gemini API",
+    description: "Full-stack AI-powered document Q&A system using Retrieval-Augmented Generation (RAG) for intelligent study assistance.",
+    projectType: "Academic Project (Ongoing)",
+    groupSize: "Group of 4",
+    details: [
+      "Full-stack AI-powered document Q&A system using Retrieval-Augmented Generation (RAG) for intelligent study assistance. Students can upload PDF documents and ask natural language questions to receive context-aware answers.",
+      "Built FastAPI backend with ChromaDB vector database for semantic search and Google Gemini API for embeddings and LLM responses. Implemented Celery with Redis for asynchronous PDF processing.",
+      "Developed Next.js frontend with Supabase authentication and persistent chat sessions. Features multi-user support with isolated document collections per user."
+    ],
+    github: "https://github.com/Adha-KG/"
+  },
+  {
+    title: "TEMS Academy LMS",
+    tech: "Next.js 14, TypeScript, Supabase, PDF Generation",
+    description: "Full-stack Learning Management System for TEMS Academy with automated PDF report generation and role-based access control.",
+    projectType: "Personal Project",
+    details: [
+      "Developed a full-stack Learning Management System (LMS) for TEMS Academy, an Olympiad Math coaching center, where I used to work as an Olympiad math trainer.",
+      "Seeing them struggling with spreadsheet's repetitive tasks, I made this to streamline managing student's data (exam scores and rank history) and weekly exam's result generation (PDF Resultsheet). Built with Next.js 14 and TypeScript with Supabase PostgreSQL as Database for storage, featuring a mobile-responsive UI."
+    ],
+    github: "https://github.com/ninadgns/TEMS-LMS"
+  },
+  {
+    title: "CGPA Calculator",
+    tech: "React, HTML, CSS, JavaScript",
+    description: "CGPA Calculator used by CSEDU students, featuring calculations for theory and lab subjects with mobile-responsive design.",
+    projectType: "Personal Project",
+    details: [
+      "Built a CGPA Calculator as a hobby in my first year, using React.",
+      "This is used by my batchmates regularly, featuring calculations for theory and lab subjects, including previous CGPA, with a mobile-responsive design."
+    ],
+    github: "https://github.com/ninadgns/ninadgns.github.io/tree/main/CGPASource"
+  },
+  {
+    title: "Hill Climb Racing Clone",
+    tech: "C++, SDL2, Custom Physics Engine",
+    description: "2D physics-based game recreation with custom collision detection, fuel management, and audio integration.",
+    projectType: "Academic Project",
+    groupSize: "Group of 2",
+    details: [
+      "2D physics-based game recreation with custom collision detection, fuel management, and audio integration. Designed and implemented the custom physics engine and Entity Component System (ECS) architecture.",
+      "Developed input systems and graphics rendering components, contributing to core gameplay mechanics."
+    ],
+    github: "https://github.com/mithunvoe/Hill-Climb-Racing"
+  },
+  {
+    title: "NutriCulinary",
+    tech: "Next.js, TypeScript, Supabase, Tailwind CSS",
+    description: "Full-stack personalized meal planning platform with recipe recommendations based on dietary preferences, nutritional goals, and available ingredients.",
+    projectType: "Academic Project",
+    groupSize: "Group of 2",
+    details: [
+      "Full-stack personalized meal planning platform with recipe recommendations based on dietary preferences, nutritional goals, and available ingredients. Features admin dashboard and real-time data synchronization.",
+      "Implemented frontend logic for data fetching, processing, and display, including the admin dashboard and user authentication.",
+      "Managed Supabase integration with Next.js, ensuring seamless data flow."
+    ],
+    github: "https://github.com/ninadgns/meal-planner"
   }
 ]
 export const achievements = [
