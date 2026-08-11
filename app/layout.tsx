@@ -43,8 +43,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/profile.jpg",
-        width: 1254,
-        height: 1254,
+        width: 1033,
+        height: 1033,
         alt: "Md. Muhaiminul Islam Ninad",
       },
     ],
