@@ -24,15 +24,15 @@ export const workedWith = ['C++', 'LaTeX', 'Java', 'Rust', 'Git/GitHub', 'Docker
 export const interests = ['Machine Learning/AI', 'Web3/Blockchain', 'Competitive Programming', 'UI/UX Design', 'Game Development']
 export const experience = [
   {
-    role: "AI Backend Engineer",
+    role: "AI Engineer",
     company: "Makebell Ltd.",
     location: "Central, Hong Kong (Remote)",
     duration: "June 2026 - Present, Full-time",
     badge: "primary",
     details: [
-      "Engineered the core document-automation agent for an AI-powered legal drafting platform: a multi-turn DOCX drafting and redlining engine producing tracked-change (OOXML) deliverables, built with Next.js, TypeScript, and Python.",
-      "Built the document-ingestion and OCR pipeline (density-based PDF routing, olmOCR integration, resilient long-poll recovery) and multi-model LLM orchestration with provider-agnostic routing across Anthropic and DeepSeek.",
-      "Hardened reliability through adversarial code review: Drizzle/PostgreSQL migrations, an idempotent double-entry credit-ledger reconcile, and CI smoke tests across model providers."
+      "Built core components of the document-automation agent for an AI legal drafting platform: multi-turn DOCX drafting and redlining workflows using the Claude Agent SDK, producing Word-native tracked-change deliverables.",
+      "Designed the document provenance and lineage system ensuring cumulative and version-to-version redlines resolve against the correct baseline, with fail-safe handling for re-uploads, lineage forks, renamed files, and adversarial inputs, backed by 18+ test suites.",
+      "Built the OCR/ingestion pipeline and multi-model LLM orchestration across Anthropic and DeepSeek, alongside the in-browser DOCX viewer/editor and agent runtime security, concurrency, and sandboxing controls."
     ]
   },
   {
@@ -185,6 +185,14 @@ export const projects = [
   }
 ]
 export const achievements = [
+  {
+    title: "2nd Runners Up at Bengali LLM Hallucination Detection Challenge, IUT 12th ICT Fest 2026",
+    description: "Placed third in a national datathon on detecting hallucinated large language model outputs in Bengali.",
+    link: "https://iutictfest26.tech/datathon",
+    details: [
+      "Placed third in a national datathon on detecting hallucinated large language model outputs in Bengali; built the detection pipeline and defended the methodology in documentation and a final-round presentation."
+    ]
+  },
   {
     title: "2nd Runners Up at Code Samurai Inter University Hackathon 2024",
     description: "Member of team 'DU_Diligence' in this competitive hackathon, focusing on rapid development and presentation of innovative solutions.",

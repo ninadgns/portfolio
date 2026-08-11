@@ -14,15 +14,15 @@ const geistMono = Geist_Mono({
 
 const siteUrl = "https://ninadgns.vercel.app";
 const description =
-  "AI Backend Engineer at Makebell Ltd. building document-automation and LLM systems. Final-year CSE student at the University of Dhaka with a background in Olympiad Mathematics.";
+  "AI Engineer at Makebell Ltd. building document-automation and LLM systems. Final-year CSE student at the University of Dhaka with a background in Olympiad Mathematics.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Md. Muhaiminul Islam Ninad | AI Backend Engineer",
+  title: "Md. Muhaiminul Islam Ninad | AI Engineer",
   description,
   keywords: [
     "Muhaiminul Islam Ninad",
-    "AI Backend Engineer",
+    "AI Engineer",
     "Full Stack Developer",
     "University of Dhaka",
     "Next.js",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     type: "website",
     url: siteUrl,
     siteName: "Md. Muhaiminul Islam Ninad",
-    title: "Md. Muhaiminul Islam Ninad | AI Backend Engineer",
+    title: "Md. Muhaiminul Islam Ninad | AI Engineer",
     description,
     images: [
       {
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "Md. Muhaiminul Islam Ninad | AI Backend Engineer",
+    title: "Md. Muhaiminul Islam Ninad | AI Engineer",
     description,
     images: ["/profile.jpg"],
   },
