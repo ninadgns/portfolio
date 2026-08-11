@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# latex build artifacts (CV source is main.tex; served copy lives in public/)
+/main.aux
+/main.log
+/main.out
+/main.pdf
