@@ -1,10 +1,10 @@
-import { containerVariants, interests, itemVariants, proficient, projects, workedWith } from '@/app/constants';
-import Hero from '@/components/Hero';
-import Navigation from '@/components/Navigation';
+import { containerVariants, itemVariants, projects } from '@/app/constants';
 import { motion } from 'framer-motion';
 import { Github, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+
+const linkClass = 'inline-flex items-center gap-2 font-semibold transition-colors hover-scale text-sm border-b-[3px] border-[var(--accent)]';
 
 export default function Projects(){
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -90,23 +90,25 @@ export default function Projects(){
                     </div>
 
                     <div className="mt-auto pt-4 flex flex-wrap gap-3">
-                      <Link
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 font-semibold transition-colors hover-scale text-sm border-b-[3px] border-[var(--accent)]"
-                        style={{ color: 'var(--foreground)' }}
-                      >
-                        <Github size={16} />
-                        GitHub
-                        <ExternalLink size={12} />
-                      </Link>
+                      {project.github && (
+                        <Link
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={linkClass}
+                          style={{ color: 'var(--foreground)' }}
+                        >
+                          <Github size={16} />
+                          GitHub
+                          <ExternalLink size={12} />
+                        </Link>
+                      )}
                       {project.githubFrontend && (
                         <Link
                           href={project.githubFrontend}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 font-semibold transition-colors hover-scale text-sm border-b-[3px] border-[var(--accent)]"
+                          className={linkClass}
                           style={{ color: 'var(--foreground)' }}
                         >
                           <Github size={16} />
@@ -114,16 +116,28 @@ export default function Projects(){
                           <ExternalLink size={12} />
                         </Link>
                       )}
-                      {project.githubBackend && project.githubBackend !== project.github && (
+                      {project.githubBackend && (
                         <Link
                           href={project.githubBackend}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 font-semibold transition-colors hover-scale text-sm border-b-[3px] border-[var(--accent)]"
+                          className={linkClass}
                           style={{ color: 'var(--foreground)' }}
                         >
                           <Github size={16} />
                           Backend
+                          <ExternalLink size={12} />
+                        </Link>
+                      )}
+                      {project.liveUrl && (
+                        <Link
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={linkClass}
+                          style={{ color: 'var(--foreground)' }}
+                        >
+                          {project.liveLabel ?? 'Live'}
                           <ExternalLink size={12} />
                         </Link>
                       )}

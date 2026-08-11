@@ -6,7 +6,7 @@ export default function Footer() {
                     <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                         <div className="text-left">
                             <p style={{ color: 'var(--muted)' }}>
-                                © 2025 Md. Muhaiminul Islam Ninad
+                                © {new Date().getFullYear()} Md. Muhaiminul Islam Ninad
                             </p>
                         </div>
                         <div className="text-right">

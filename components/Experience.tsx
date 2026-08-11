@@ -1,4 +1,4 @@
-import { containerVariants, itemVariants } from '@/app/constants';
+import { containerVariants, experience, itemVariants } from '@/app/constants';
 import { motion } from 'framer-motion';
 
 export default function Experience() {
@@ -18,76 +18,28 @@ export default function Experience() {
                         Work Experience
                     </motion.h2>
                     <div className="space-y-8">
-                        <motion.div variants={itemVariants} className="card hover-lift">
-                            <div className="flex items-start justify-between mb-4">
-                                <div>
-                                    <h3 className="text-xl font-semibold" style={{ color: 'var(--foreground)' }}>Full Stack Software Engineer</h3>
-                                    <p className="gradient-text font-medium">Askturing.Ai</p>
-                                    <p style={{ color: 'var(--muted)' }}>Remote</p>
+                        {experience.map((job) => (
+                            <motion.div key={`${job.company}-${job.role}`} variants={itemVariants} className="card hover-lift">
+                                <div className="flex flex-col sm:flex-row items-start justify-between gap-3 mb-4">
+                                    <div>
+                                        <h3 className="text-xl font-semibold" style={{ color: 'var(--foreground)' }}>{job.role}</h3>
+                                        <p className="gradient-text font-medium">{job.company}</p>
+                                        <p style={{ color: 'var(--muted)' }}>{job.location}</p>
+                                    </div>
+                                    <span className={`px-3 py-1 text-sm badge badge-${job.badge} shrink-0`}>
+                                        {job.duration}
+                                    </span>
                                 </div>
-                                <span className="px-3 py-1 text-sm badge badge-primary">
-                                    July 2024 - May 2026, Full-time
-                                </span>
-                            </div>
-                            <ul className="space-y-2" style={{ color: 'var(--muted)' }}>
-                                <li>• Develop and maintain a full-fledged user portal using Next.js</li>
-                                <li>• Leveraged AI-driven workflows via Cursor and Claude Code to fully automate routine tasks and systematically plan, architect, and fine-tune large-scale feature improvements</li>
-                                <li>• Build and optimise Python-based APIs integrated with PostgreSQL for backend functionality and data processing</li>
-                                <li>• Collaborate with team members across different time zones in an asynchronous workflow</li>
-                            </ul>
-                        </motion.div>
-
-                        <motion.div variants={itemVariants} className="card hover-lift">
-                            <div className="flex items-start justify-between mb-4">
-                                <div>
-                                    <h3 className="text-xl font-semibold" style={{ color: 'var(--foreground)' }}>Academic Team Member</h3>
-                                    <p className="gradient-text font-medium">Bangladesh Math Olympiad</p>
-                                    <p style={{ color: 'var(--muted)' }}>Bangladesh</p>
-                                </div>
-                                <span className="px-3 py-1 text-sm badge badge-primary">
-                                    2022 - Present
-                                </span>
-                            </div>
-                            <ul className="space-y-2" style={{ color: 'var(--muted)' }}>
-                                <li>• Training students at Olympiad Camps</li>
-                                <li>• Developing Olympiad Questions for National and Regional Olympiads</li>
-                                <li>• Evaluating Answer Scripts and preparing results at National and Regional Olympiads</li>
-                            </ul>
-                        </motion.div>
-
-                        <motion.div variants={itemVariants} className="card hover-lift">
-                            <div className="flex items-start justify-between mb-4">
-                                <div>
-                                    <h3 className="text-xl font-semibold" style={{ color: 'var(--foreground)' }}>Secretary of Seminar & Workshop</h3>
-                                    <p className="gradient-text font-medium">CSEDU Students&lsquo; Club</p>
-                                    <p style={{ color: 'var(--muted)' }}>University of Dhaka</p>
-                                </div>
-                                <span className="px-3 py-1 text-sm badge badge-secondary">
-                                    2023 - 2025
-                                </span>
-                            </div>
-                            <ul className="space-y-2" style={{ color: 'var(--muted)' }}>
-                                <li>• Organizing events at the Department</li>
-                                <li>• Collaborating with other departments of DU for inter department events</li>
-                            </ul>
-                        </motion.div>
-
-                        <motion.div variants={itemVariants} className="card hover-lift">
-                            <div className="flex items-start justify-between mb-4">
-                                <div>
-                                    <h3 className="text-xl font-semibold" style={{ color: 'var(--foreground)' }}>Head of HR & Coordinator</h3>
-                                    <p className="gradient-text font-medium">Notre Dame Math Club</p>
-                                    <p style={{ color: 'var(--muted)' }}>Notre Dame College</p>
-                                </div>
-                                <span className="px-3 py-1 text-sm badge badge-secondary">
-                                    2020 – 2021
-                                </span>
-                            </div>
-                            <ul className="space-y-2" style={{ color: 'var(--muted)' }}>
-                                <li>• Arranged sessions and learnt from distinguished researchers & teachers from home & abroad</li>
-                                <li>• Organized large-scale events to enhance students' passion for the subject</li>
-                            </ul>
-                        </motion.div>
+                                <ul className="space-y-2" style={{ color: 'var(--muted)' }}>
+                                    {job.details.map((detail) => (
+                                        <li key={detail} className="flex items-start gap-2">
+                                            <span className="mt-1" style={{ color: 'var(--accent)' }}>•</span>
+                                            <span>{detail}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </motion.div>
+                        ))}
                     </div>
                 </motion.div>
             </div>

@@ -1,7 +1,7 @@
 
 import { containerVariants, itemVariants } from '@/app/constants';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
+import { FileDown, Github, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Hero() {
@@ -37,12 +37,21 @@ export default function Hero() {
                         className="text-2xl mb-8 mx-auto pop-in"
                         style={{ color: 'var(--muted)' }}
                     >
-                        Final-year CSE student at the University of Dhaka with a strong background in Olympiad Mathematics and problem-solving. Experienced in web and software development, currently working on building AI based solution using Python and NextJS.
+                        AI Backend Engineer at Makebell Ltd., building the document-automation and LLM orchestration behind an AI-powered legal drafting platform. Final-year CSE student at the University of Dhaka with a strong background in Olympiad Mathematics and problem-solving.
                     </motion.p>
                     <motion.div
                         variants={itemVariants}
                         className="flex flex-wrap justify-center gap-4 mb-8"
                     >
+                        <Link
+                            href="/Md_Muhaiminul_Islam_Ninad_CV.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn-secondary pop-in flex items-center gap-2"
+                        >
+                            <FileDown size={20} />
+                            Download CV
+                        </Link>
                         <Link href="tel:01799525733" className="btn-primary pop-in flex items-center gap-2">
                             <Phone size={20} />
                             Call
