@@ -10,13 +10,19 @@
   --secondary-hover: #b91c1c;
   --muted: #374151;
   --border: #1a1a1a;
+  /* Two border tiers only: structural (cards, buttons, chips) and small (badges). */
   --border-width: 3px;
-  --success: #16a34a;
+  --border-width-sm: 2px;
+  --success: #15803d;
   --warning: #eab308;
   --error: #dc2626;
+  /* --yellow is a surface fill; --yellow-ink is the readable version for icons/text. */
   --yellow: #facc15;
+  --yellow-ink: #a16207;
   --blue: #2563eb;
+  /* Two shadow tiers only: resting offset and the pressed/hover offset. */
   --shadow-offset: 6px;
+  --shadow-offset-sm: 3px;
   --radius: 0;
   --transition: all 0.15s ease;
   --spring: cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -32,6 +38,7 @@
   --muted: #d1d5db;
   --border: #f5f0e8;
   --yellow: #fde047;
+  --yellow-ink: #fde047;
   --blue: #60a5fa;
 }
 
@@ -62,13 +69,13 @@ body {
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-nav a {
-  color: var(--foreground) !important;
+.nav-link {
+  color: var(--foreground);
   font-weight: 600;
 }
 
-nav a:hover {
-  color: var(--accent) !important;
+.nav-link:hover {
+  color: var(--accent);
 }
 
 /* Neobrutalist scrollbar */
@@ -121,7 +128,16 @@ html {
 .card h4,
 .card strong {
   color: var(--foreground) !important;
+}
+
+/* Type scale steps down with the heading level: h3 outranks h4. */
+.card h3,
+.card strong {
   font-weight: 700;
+}
+
+.card h4 {
+  font-weight: 600;
 }
 
 .card p,
@@ -198,6 +214,25 @@ html {
   box-shadow: calc(var(--shadow-offset) - 2px) calc(var(--shadow-offset) - 2px) 0 0 var(--border);
 }
 
+/* Square icon button (mobile nav toggle, back-to-top) */
+.icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--background);
+  color: var(--foreground);
+  border: var(--border-width) solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-offset) var(--shadow-offset) 0 0 var(--border);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.icon-button:hover {
+  transform: translate(var(--shadow-offset-sm), var(--shadow-offset-sm));
+  box-shadow: var(--shadow-offset-sm) var(--shadow-offset-sm) 0 0 var(--border);
+}
+
 /* Neobrutalist badges */
 .badge {
   display: inline-flex;
@@ -206,26 +241,63 @@ html {
   border-radius: var(--radius);
   font-size: 0.875rem;
   font-weight: 600;
-  border: 2px solid var(--border);
+  border: var(--border-width-sm) solid var(--border);
   transition: var(--transition);
 }
 
 .badge-primary {
   background: var(--yellow);
   color: var(--foreground);
-  border: 2px solid var(--border);
 }
 
 .badge-secondary {
   background: var(--blue);
   color: white;
-  border: 2px solid var(--border);
 }
 
 .badge-success {
   background: var(--success);
   color: white;
-  border: 2px solid var(--border);
+}
+
+/* Dark mode inverts the accent to a light blue, so white-on-accent drops to 2.5:1.
+   Ink-on-accent instead (6.9:1). Applies if the toggle in page.tsx is re-enabled. */
+[data-theme="dark"] .btn-primary,
+[data-theme="dark"] .btn-secondary,
+[data-theme="dark"] .badge-secondary {
+  color: #1a1a1a;
+}
+
+[data-theme="dark"] .btn-outline:hover {
+  color: #1a1a1a;
+}
+
+/* Disclosure toggle: reveals card detail on click (works on touch and keyboard) */
+.disclosure-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  min-height: 44px;
+  padding: 0.25rem 0;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--accent);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.disclosure-toggle:hover {
+  color: var(--accent-hover);
+}
+
+.disclosure-toggle svg {
+  transition: transform 0.2s ease;
+}
+
+.disclosure-toggle[aria-expanded="true"] svg {
+  transform: rotate(180deg);
 }
 
 /* Neobrutalist nav / theme toggle */
@@ -264,14 +336,15 @@ html {
   box-shadow: 2px 2px 0 0 var(--border);
 }
 
-/* Hover utilities - neobrutalist offset */
+/* Hover utilities - neobrutalist offset.
+   Do not combine .hover-lift with .card: both animate transform on hover. */
 .hover-lift {
   transition: var(--transition);
 }
 
 .hover-lift:hover {
-  transform: translate(4px, 4px);
-  box-shadow: -4px -4px 0 0 var(--border);
+  transform: translate(var(--shadow-offset-sm), var(--shadow-offset-sm));
+  box-shadow: calc(-1 * var(--shadow-offset-sm)) calc(-1 * var(--shadow-offset-sm)) 0 0 var(--border);
 }
 
 .hover-scale {
@@ -279,12 +352,12 @@ html {
 }
 
 .hover-scale:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 2px 2px 0 0 var(--border);
+  transform: translate(calc(-1 * var(--shadow-offset-sm)), calc(-1 * var(--shadow-offset-sm)));
+  box-shadow: var(--shadow-offset-sm) var(--shadow-offset-sm) 0 0 var(--border);
 }
 
-/* Focus: thick outline */
-*:focus {
+/* Focus: thick outline, keyboard only (mouse clicks should not draw a ring) */
+*:focus-visible {
   outline: 3px solid var(--accent);
   outline-offset: 2px;
 }

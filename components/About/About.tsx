@@ -1,6 +1,5 @@
-import { containerVariants, interests, itemVariants, proficient, workedWith } from '@/app/constants';
+import { containerVariants, itemVariants } from '@/app/constants';
 import { motion } from 'framer-motion';
-import { Award, Code } from 'lucide-react';
 import Education from './Education';
 import TechnicalSkills from './TechnicalSkills';
 import PersonalSkills from './PersonalSkills';
@@ -12,17 +11,17 @@ export default function About() {
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.15 }}
           variants={containerVariants}
         >
           <motion.h2
             variants={itemVariants}
-            className="text-3xl font-black text-center gradient-text mb-12 tracking-tight"
+            className="text-3xl sm:text-4xl font-black text-center gradient-text mb-12 tracking-tight"
           >
             About Me
           </motion.h2>
 
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="grid lg:grid-cols-3 gap-8 items-start">
             <Education />
             <TechnicalSkills />
             <PersonalSkills />

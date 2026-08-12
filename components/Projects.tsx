@@ -2,49 +2,39 @@ import { containerVariants, itemVariants, projects } from '@/app/constants';
 import { motion } from 'framer-motion';
 import { Github, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
-import { useState } from 'react';
+import DetailsDisclosure from './DetailsDisclosure';
 
-const linkClass = 'inline-flex items-center gap-2 font-semibold transition-colors hover-scale text-sm border-b-[3px] border-[var(--accent)]';
+const linkClass =
+  'inline-flex items-center gap-2 font-semibold transition-colors text-sm min-h-11 border-b-[3px] border-[var(--accent)] hover:border-b-[var(--accent-hover)]';
 
-export default function Projects(){
-    const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
-    return(
-        <>
+export default function Projects() {
+    return (
         <section id="projects" className="py-16 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: 'var(--background)' }}>
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.15 }}
             variants={containerVariants}
           >
             <motion.h2
               variants={itemVariants}
-              className="text-3xl font-black text-center gradient-text mb-12 tracking-tight"
+              className="text-3xl sm:text-4xl font-black text-center gradient-text mb-12 tracking-tight"
             >
               Featured Projects
             </motion.h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
-              {projects.map((project, index) => (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {projects.map((project) => (
                 <motion.div
-                  key={index}
+                  key={project.title}
                   variants={itemVariants}
-                  className="card hover-lift relative"
-                  onMouseEnter={() => setHoveredIndex(index)}
-                  onMouseLeave={() => setHoveredIndex(null)}
-                  style={{
-                    minHeight: '280px',
-                    alignSelf: 'start',
-                  }}
+                  className="card flex flex-col"
                 >
-                  <div className="flex flex-col">
-                    <div className="flex items-start justify-between mb-2">
-                      <h3 className="text-xl font-semibold" style={{ color: 'var(--foreground)' }}>{project.title}</h3>
-                    </div>
+                  <h3 className="text-xl font-semibold" style={{ color: 'var(--foreground)' }}>{project.title}</h3>
 
-                    <p className="gradient-text text-sm mb-2">{project.tech}</p>
+                  <p className="text-sm font-medium mt-1 mb-3" style={{ color: 'var(--muted)' }}>{project.tech}</p>
 
+                  {(project.projectType || project.groupSize) && (
                     <div className="flex flex-wrap gap-2 mb-3">
                       {project.projectType && (
                         <span className="badge badge-primary text-xs">{project.projectType}</span>
@@ -53,43 +43,15 @@ export default function Projects(){
                         <span className="badge badge-secondary text-xs">{project.groupSize}</span>
                       )}
                     </div>
+                  )}
 
-                    <div className="mb-4">
-                      <motion.p
-                        animate={{
-                          opacity: hoveredIndex === index && project.details ? 0 : 1,
-                          height: hoveredIndex === index && project.details ? 0 : 'auto',
-                        }}
-                        transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
-                        style={{ overflow: 'hidden', color: 'var(--muted)' }}
-                        className="text-sm"
-                      >
-                        {project.description}
-                      </motion.p>
+                  <DetailsDisclosure
+                    summary={project.description}
+                    details={project.details}
+                    label={project.title}
+                  />
 
-                      {project.details && (
-                        <motion.div
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{
-                            height: hoveredIndex === index ? 'auto' : 0,
-                            opacity: hoveredIndex === index ? 1 : 0,
-                          }}
-                          transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
-                          style={{ overflow: 'hidden' }}
-                        >
-                          <ul className="space-y-2 text-sm" style={{ color: 'var(--muted)' }}>
-                            {project.details.map((detail, detailIndex) => (
-                              <li key={detailIndex} className="flex items-start gap-2">
-                                <span className="text-xs mt-1.5" style={{ color: 'var(--accent)' }}>•</span>
-                                <span>{detail}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </motion.div>
-                      )}
-                    </div>
-
-                    <div className="mt-auto pt-4 flex flex-wrap gap-3">
+                  <div className="mt-auto pt-4 flex flex-wrap gap-x-4 gap-y-1">
                       {project.github && (
                         <Link
                           href={project.github}
@@ -98,9 +60,10 @@ export default function Projects(){
                           className={linkClass}
                           style={{ color: 'var(--foreground)' }}
                         >
-                          <Github size={16} />
+                          <Github size={16} aria-hidden="true" />
                           GitHub
-                          <ExternalLink size={12} />
+                          <ExternalLink size={12} aria-hidden="true" />
+                          <span className="sr-only">(opens in a new tab)</span>
                         </Link>
                       )}
                       {project.githubFrontend && (
@@ -111,9 +74,10 @@ export default function Projects(){
                           className={linkClass}
                           style={{ color: 'var(--foreground)' }}
                         >
-                          <Github size={16} />
+                          <Github size={16} aria-hidden="true" />
                           Frontend
-                          <ExternalLink size={12} />
+                          <ExternalLink size={12} aria-hidden="true" />
+                          <span className="sr-only">(opens in a new tab)</span>
                         </Link>
                       )}
                       {project.githubBackend && (
@@ -124,9 +88,10 @@ export default function Projects(){
                           className={linkClass}
                           style={{ color: 'var(--foreground)' }}
                         >
-                          <Github size={16} />
+                          <Github size={16} aria-hidden="true" />
                           Backend
-                          <ExternalLink size={12} />
+                          <ExternalLink size={12} aria-hidden="true" />
+                          <span className="sr-only">(opens in a new tab)</span>
                         </Link>
                       )}
                       {project.liveUrl && (
@@ -138,16 +103,16 @@ export default function Projects(){
                           style={{ color: 'var(--foreground)' }}
                         >
                           {project.liveLabel ?? 'Live'}
-                          <ExternalLink size={12} />
+                          <ExternalLink size={12} aria-hidden="true" />
+                          <span className="sr-only">(opens in a new tab)</span>
                         </Link>
                       )}
-                    </div>
                   </div>
                 </motion.div>
               ))}
             </div>
           </motion.div>
         </div>
-      </section></>
+      </section>
     )
 }

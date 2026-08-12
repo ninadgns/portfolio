@@ -1,20 +1,22 @@
+// Kept short: with 12 achievement cards a 0.1s stagger meant the last card
+// only finished ~1.8s after the section scrolled into view.
 export const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1
+      staggerChildren: 0.05
     }
   }
 };
 
 export const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 16 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.6
+      duration: 0.35
     }
   }
 };
@@ -28,7 +30,6 @@ export const experience = [
     company: "Makebell Ltd.",
     location: "Central, Hong Kong (Remote)",
     duration: "June 2026 - Present, Full-time",
-    badge: "primary",
     details: [
       "Built core components of the document-automation agent for an AI legal drafting platform: multi-turn DOCX drafting and redlining workflows using the Claude Agent SDK, producing Word-native tracked-change deliverables.",
       "Designed the document provenance and lineage system ensuring cumulative and version-to-version redlines resolve against the correct baseline, with fail-safe handling for re-uploads, lineage forks, renamed files, and adversarial inputs, backed by 18+ test suites.",
@@ -40,7 +41,6 @@ export const experience = [
     company: "Askturing.AI",
     location: "California, USA (Remote)",
     duration: "July 2024 - May 2026, Full-time",
-    badge: "primary",
     details: [
       "Architected and executed agentic AI workflows (Cursor, Claude Code) to automate routine engineering tasks and accelerate delivery across frontend, backend, and admin surfaces.",
       "Designed and shipped large-scale analytics and billing-intelligence features, including multi-tenant usage and credit APIs, using Python, FastAPI, and PostgreSQL on a SOC 2 compliant LegalTech platform.",
@@ -52,7 +52,6 @@ export const experience = [
     company: "Bangladesh Math Olympiad",
     location: "Bangladesh",
     duration: "2022 - Present",
-    badge: "primary",
     details: [
       "Train students at Olympiad Camps, including taking classes and tests.",
       "Develop questions for National and Regional Olympiads.",
@@ -64,7 +63,6 @@ export const experience = [
     company: "CSEDU Students' Club",
     location: "University of Dhaka",
     duration: "2023 - 2025",
-    badge: "secondary",
     details: [
       "Organize departmental events and collaborate with other DU departments for inter-department activities."
     ]
@@ -74,7 +72,6 @@ export const experience = [
     company: "Notre Dame Math Club",
     location: "Notre Dame College",
     duration: "2020 - 2021",
-    badge: "secondary",
     details: [
       "Arranged sessions with distinguished researchers and teachers from home and abroad.",
       "Organized large-scale events to foster students' passion for mathematics."
@@ -187,7 +184,6 @@ export const projects = [
 export const achievements = [
   {
     title: "2nd Runners Up at Bengali LLM Hallucination Detection Challenge, IUT 12th ICT Fest 2026",
-    description: "Placed third in a national datathon on detecting hallucinated large language model outputs in Bengali.",
     link: "https://iutictfest26.tech/datathon",
     details: [
       "Placed third in a national datathon on detecting hallucinated large language model outputs in Bengali; built the detection pipeline and defended the methodology in documentation and a final-round presentation."
@@ -195,7 +191,6 @@ export const achievements = [
   },
   {
     title: "2nd Runners Up at Code Samurai Inter University Hackathon 2024",
-    description: "Member of team 'DU_Diligence' in this competitive hackathon, focusing on rapid development and presentation of innovative solutions.",
     link: "https://www.codesamuraibd.net/",
     details: [
       "Member of team 'DU_Diligence' in this competitive hackathon, focusing on rapid development and presentation of innovative solutions for real-world problems."
@@ -203,35 +198,30 @@ export const achievements = [
   },
   {
     title: "1st Runners Up at Al-Khwarizmi CTF Contest 2025",
-    description: "Secured second position as part of a four-member team in this nationwide cybersecurity CTF competition, part of the Al-Khwarizmi Science Fest 2025.",
     details: [
       "Secured second position as part of a four-member team in this nationwide cybersecurity Capture The Flag (CTF) competition, part of the Al-Khwarizmi Science Fest 2025, competing against the best teams from across Bangladesh in real-world cybersecurity scenarios and challenges."
     ]
   },
   {
     title: "Top 10 Finalist at MicroOps Hackathon, CUET CSE Fest 2025",
-    description: "Built an end-to-end automated microservices pipeline during an intensive 11-hour onsite sprint.",
     details: [
       "Built an end-to-end automated microservices pipeline with CI/CD, service mesh, and observability during an intensive 11-hour onsite sprint, finishing in the top 10 teams nationwide."
     ]
   },
   {
     title: "1st Place at DU CTF 2024",
-    description: "Member of team 'DU_MPLING' in this university-wide Capture The Flag cybersecurity competition.",
     details: [
       "Member of team 'DU_MPLING' in this university-wide Capture The Flag (CTF) cybersecurity competition, which challenged participants with problems in areas like reverse engineering, web exploitation, and forensics."
     ]
   },
   {
     title: "5th Place at DU CTF 2023",
-    description: "Leader of team 'Doraemon' in the university's annual CTF event.",
     details: [
       "Leader of team 'Doraemon' in the university's annual CTF event, demonstrating leadership and technical proficiency in cybersecurity challenges."
     ]
   },
   {
     title: "Honorable Mention at Asian Pacific Mathematical Olympiad",
-    description: "Recognized in 2019 & 2021 in this prestigious international mathematics competition for pre-university students.",
     link: "https://www.apmo-official.org/",
     details: [
       "Recognized as a top solver in 2019 & 2021 in this prestigious international mathematics competition for pre-university students across the Asia-Pacific region."
@@ -239,7 +229,6 @@ export const achievements = [
   },
   {
     title: "National Round Champion at Bangladesh Mathematical Olympiad",
-    description: "National winner in 2013, 2017 (Junior Category Champion), 2018, and 2021; competed yearly from 2013-2021.",
     link: "https://matholympiad.org.bd/",
     details: [
       "National winner in 2013, 2017 (Junior Category Champion), 2018, and 2021; competed yearly from 2013-2021 with regional wins in all but 2015, and consistently advanced to National Camps and Selection Tests."
@@ -247,28 +236,24 @@ export const achievements = [
   },
   {
     title: "International Mathematical Olympiad (IMO) Team Selection Test Participant",
-    description: "Qualified for and attended the selection tests for IMO in 2019 and 2020.",
     details: [
       "Qualified for and attended the selection tests for IMO in 2019 and 2020; with preparation and exams involving extensive work on IMO Shortlist (IMOSL) problems."
     ]
   },
   {
     title: "1st Runners Up at 1st Undergraduate Research Summit 2023, University of Dhaka",
-    description: "Team achievement in the university's inaugural research summit.",
     details: [
       "Team achievement in the university's inaugural research summit, involving the presentation and defense of a high school research project."
     ]
   },
   {
     title: "3rd Place at SCB-PA Inter School College Programming Contest (ISCPC)",
-    description: "Achieved a top-three finish in this competitive programming contest for school and college students in 2020.",
     details: [
       "2020. Achieved a top-three finish in this competitive programming contest for school and college students."
     ]
   },
   {
     title: "12th Place at National High School Programming Contest (NHSPC)",
-    description: "Ranked well in this nationwide programming competition for high school students in 2017.",
     details: [
       "2017. Ranked well in this nationwide programming competition for high school students, assessing algorithmic thinking and coding skills."
     ]

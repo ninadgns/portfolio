@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import { MotionConfig } from 'framer-motion';
 import Hero from '@/components/Hero';
 import Navigation from '@/components/Navigation';
 import About from '@/components/About/About';
@@ -39,15 +40,21 @@ export default function Home() {
   // };
 
   return (
-    <div className="min-h-screen" style={{ background: 'var(--background)' }}>
-      <Navigation />
-      <Hero />
-      <About />
-      <Experience />
-      <Projects />
-      <Achievements />
-      <Contact />
-      <Footer />
-    </div>
+    // reducedMotion="user" honours prefers-reduced-motion. The CSS media query in
+    // globals.css cannot do this alone: Framer Motion animates via inline styles.
+    <MotionConfig reducedMotion="user">
+      <div className="min-h-screen" style={{ background: 'var(--background)' }}>
+        <Navigation />
+        <main>
+          <Hero />
+          <About />
+          <Experience />
+          <Projects />
+          <Achievements />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
+    </MotionConfig>
   );
 }

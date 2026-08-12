@@ -2,27 +2,41 @@ import { itemVariants } from '@/app/constants';
 import { motion } from 'framer-motion';
 import { GraduationCap } from 'lucide-react';
 
+const schools = [
+  {
+    name: 'University of Dhaka',
+    place: 'Dhaka, Bangladesh',
+    programme: 'CSE, 4th Year 1st Semester',
+    grade: 'CGPA: 3.74/4.00',
+    dates: 'September 2022 - December 2026 (Expected)',
+  },
+  {
+    name: 'Notre Dame College',
+    place: 'Dhaka, Bangladesh',
+    programme: 'HSC',
+    grade: 'GPA: 5.00',
+    dates: '2019 - 2021',
+  },
+];
 
-export default function Education(){
+export default function Education() {
     return (
         <motion.div variants={itemVariants}>
-              <h3 className="text-2xl font-semibold mb-6 flex items-center gap-2" style={{ color: 'var(--foreground)' }}>
-                <GraduationCap style={{ color: 'var(--accent)' }} />
+              <h3 className="text-2xl font-bold mb-6 flex items-center gap-2" style={{ color: 'var(--foreground)' }}>
+                <GraduationCap aria-hidden="true" style={{ color: 'var(--accent)' }} />
                 Education
               </h3>
               <div className="space-y-4">
-                <div className="card hover-lift">
-                  <h4 className="font-semibold" style={{ color: 'var(--foreground)' }}>University of Dhaka</h4>
-                  <p style={{ color: 'var(--muted)' }}>Dhaka, Bangladesh</p>
-                  <p style={{ color: 'var(--muted)' }}>CSE, 4th Year 1st Semester; <span className="gradient-text font-semibold">CGPA: 3.77/4.00</span></p>
-                  <p className="text-sm" style={{ color: 'var(--muted)' }}>September 2022 - December 2026 (Expected)</p>
-                </div>
-                <div className="card hover-lift">
-                  <h4 className="font-semibold" style={{ color: 'var(--foreground)' }}>Notre Dame College</h4>
-                  <p style={{ color: 'var(--muted)' }}>Dhaka, Bangladesh</p>
-                  <p style={{ color: 'var(--muted)' }}>HSC; <span className="gradient-text font-semibold">GPA: 5.00</span></p>
-                  <p className="text-sm" style={{ color: 'var(--muted)' }}>2019 - 2021</p>
-                </div>
+                {schools.map(({ name, place, programme, grade, dates }) => (
+                  <div key={name} className="card">
+                    <h4 className="font-semibold" style={{ color: 'var(--foreground)' }}>{name}</h4>
+                    <p style={{ color: 'var(--muted)' }}>{place}</p>
+                    <p style={{ color: 'var(--muted)' }}>
+                      {programme}; <span className="gradient-text font-semibold">{grade}</span>
+                    </p>
+                    <p className="text-sm mt-1" style={{ color: 'var(--muted)' }}>{dates}</p>
+                  </div>
+                ))}
               </div>
             </motion.div>
     )

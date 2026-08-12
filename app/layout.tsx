@@ -67,6 +67,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {/* Scroll-reveal ships the markup at opacity:0 and lets JS fade it in.
+            Without JS that leaves the page blank below the hero, so reveal it. */}
+        <noscript>
+          <style>{`[style*="opacity:0"]{opacity:1!important;transform:none!important}`}</style>
+        </noscript>
         {children}
       </body>
     </html>

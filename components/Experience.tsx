@@ -8,32 +8,35 @@ export default function Experience() {
                 <motion.div
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true }}
+                    viewport={{ once: true, amount: 0.15 }}
                     variants={containerVariants}
                 >
                     <motion.h2
                         variants={itemVariants}
-                        className="text-3xl font-black text-center gradient-text mb-12 tracking-tight"
+                        className="text-3xl sm:text-4xl font-black text-center gradient-text mb-12 tracking-tight"
                     >
                         Work Experience
                     </motion.h2>
-                    <div className="space-y-8">
+                    {/* Narrower than the card grids: a single column of prose at full
+                        7xl width cannot fill the line without wrecking the measure. */}
+                    <div className="space-y-8 max-w-5xl mx-auto">
                         {experience.map((job) => (
-                            <motion.div key={`${job.company}-${job.role}`} variants={itemVariants} className="card hover-lift">
-                                <div className="flex flex-col sm:flex-row items-start justify-between gap-3 mb-4">
-                                    <div>
-                                        <h3 className="text-xl font-semibold" style={{ color: 'var(--foreground)' }}>{job.role}</h3>
-                                        <p className="gradient-text font-medium">{job.company}</p>
-                                        <p style={{ color: 'var(--muted)' }}>{job.location}</p>
-                                    </div>
-                                    <span className={`px-3 py-1 text-sm badge badge-${job.badge} shrink-0`}>
-                                        {job.duration}
-                                    </span>
+                            <motion.div
+                                key={`${job.company}-${job.role}`}
+                                variants={itemVariants}
+                                className="card lg:grid lg:grid-cols-[minmax(0,260px)_minmax(0,1fr)] lg:gap-8"
+                            >
+                                <div className="mb-4 lg:mb-0">
+                                    <h3 className="text-xl font-semibold" style={{ color: 'var(--foreground)' }}>{job.role}</h3>
+                                    <p className="gradient-text font-medium">{job.company}</p>
+                                    <p className="mb-3" style={{ color: 'var(--muted)' }}>{job.location}</p>
+                                    <span className="badge badge-primary">{job.duration}</span>
                                 </div>
-                                <ul className="space-y-2" style={{ color: 'var(--muted)' }}>
+                                {/* 55ch measures to ~72 real characters in Geist. */}
+                                <ul className="space-y-2 max-w-[55ch]" style={{ color: 'var(--muted)' }}>
                                     {job.details.map((detail) => (
-                                        <li key={detail} className="flex items-start gap-2">
-                                            <span className="mt-1" style={{ color: 'var(--accent)' }}>•</span>
+                                        <li key={detail} className="flex items-start gap-3">
+                                            <span aria-hidden="true" className="mt-2.5 h-1.5 w-1.5 shrink-0" style={{ background: 'var(--accent)' }} />
                                             <span>{detail}</span>
                                         </li>
                                     ))}
