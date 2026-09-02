@@ -40,8 +40,11 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# latex build artifacts (CV source is main.tex; served copy lives in public/)
-/main.aux
-/main.log
-/main.out
-/main.pdf
+# LaTeX CV lives in cv/ (source: cv/main.tex, role-tailored variant: cv/main_spotter.tex).
+# The copy the site serves is public/Md_Muhaiminul_Islam_Ninad_CV.pdf and IS tracked.
+/cv/*.aux
+/cv/*.log
+/cv/*.out
+/cv/*.pdf
+# ad-hoc PDF exports: rebuild from the .tex instead of keeping copies
+/*Ninad*.pdf
