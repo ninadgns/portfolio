@@ -1,25 +1,27 @@
-import { interests, itemVariants, proficient, workedWith } from '@/app/constants';
+import { aiAndMl, engineering, itemVariants, languages } from '@/app/constants';
 import { motion } from 'framer-motion';
 import { Code } from 'lucide-react';
 
 const chipBase = 'px-3 py-2 text-sm font-semibold hover-scale';
 const chipBorder = { border: 'var(--border-width) solid var(--border)' };
 
+// Exactly the CV's three groups. A fourth card cost ~100px of heading and
+// padding on its own, which is what pushed this column past the two beside it.
 const groups = [
   {
-    heading: 'Proficient in',
-    items: proficient,
+    heading: 'Languages',
+    items: languages,
     style: { ...chipBorder, backgroundColor: 'var(--yellow)', color: 'var(--foreground)' },
   },
   {
-    heading: 'Worked with',
-    items: workedWith,
-    style: { ...chipBorder, backgroundColor: 'var(--background)', color: 'var(--foreground)' },
+    heading: 'AI & ML',
+    items: aiAndMl,
+    style: { ...chipBorder, backgroundColor: 'var(--accent)', color: 'white' },
   },
   {
-    heading: 'Areas of interest',
-    items: interests,
-    style: { ...chipBorder, backgroundColor: 'var(--accent)', color: 'white' },
+    heading: 'Engineering',
+    items: engineering,
+    style: { ...chipBorder, backgroundColor: 'var(--background)', color: 'var(--foreground)' },
   },
 ];
 

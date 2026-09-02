@@ -89,7 +89,7 @@ export default function Hero() {
                         style={{ color: 'var(--muted)' }}
                     >
                         <MapPin size={20} aria-hidden="true" />
-                        <span>Chankharpul, Dhaka</span>
+                        <span>Dhaka, Bangladesh</span>
                     </motion.div>
                 </motion.div>
             </div>

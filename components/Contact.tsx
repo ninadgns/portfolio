@@ -39,7 +39,7 @@ export default function Contact() {
                 </li>
                 <li className="flex items-center gap-3">
                   <MapPin size={18} aria-hidden="true" style={{ color: 'var(--accent)' }} />
-                  <span>Chankharpul, Dhaka</span>
+                  <span>Dhaka, Bangladesh</span>
                 </li>
               </motion.ul>
             </div>

@@ -1,6 +1,6 @@
 import { achievements, containerVariants, itemVariants } from '@/app/constants';
 import { motion } from 'framer-motion';
-import { Award, ExternalLink } from 'lucide-react';
+import { Award, ExternalLink, Github } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Achievements() {
@@ -52,6 +52,23 @@ export default function Achievements() {
                       <p key={detail}>{detail}</p>
                     ))}
                   </div>
+
+                  {achievement.github && (
+                    <div className="mt-auto pt-4">
+                      <Link
+                        href={achievement.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 font-semibold transition-colors text-sm min-h-11 border-b-[3px] border-[var(--accent)] hover:border-b-[var(--accent-hover)]"
+                        style={{ color: 'var(--foreground)' }}
+                      >
+                        <Github size={16} aria-hidden="true" />
+                        GitHub
+                        <ExternalLink size={12} aria-hidden="true" />
+                        <span className="sr-only">(opens in a new tab)</span>
+                      </Link>
+                    </div>
+                  )}
                 </motion.div>
               ))}
             </div>

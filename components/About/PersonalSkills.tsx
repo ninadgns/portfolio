@@ -46,8 +46,7 @@ export default function PersonalSkills() {
                     ))}
                   </div>
                 </div>
-                {/* "Areas of interest" in Technical Skills covers the technical ones;
-                    this card is deliberately the non-technical counterpart. */}
+                {/* The non-technical counterpart to the Technical Skills column. */}
                 <div className="card">
                   <h4 className="font-semibold mb-2" style={{ color: 'var(--foreground)' }}>Outside Work</h4>
                   <p className="text-sm" style={{ color: 'var(--muted)' }}>
