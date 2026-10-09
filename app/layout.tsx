@@ -41,20 +41,12 @@ export const metadata: Metadata = {
     siteName: "Md. Muhaiminul Islam Ninad",
     title: "Md. Muhaiminul Islam Ninad | AI Engineer",
     description,
-    images: [
-      {
-        url: "/profile.jpg",
-        width: 1033,
-        height: 1033,
-        alt: "Md. Muhaiminul Islam Ninad",
-      },
-    ],
+    // og:image comes from app/opengraph-image.tsx.
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Md. Muhaiminul Islam Ninad | AI Engineer",
     description,
-    images: ["/profile.jpg"],
   },
 };
 
