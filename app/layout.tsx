@@ -13,8 +13,12 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// Google cuts descriptions off around 155 characters and social previews
+// around 125, so each gets a version that fits.
 const description =
-  "AI Engineer at Makebell Ltd. shipping full-stack features and LLM agents for an AI legal drafting platform. Final-year CSE student at the University of Dhaka with a background in Olympiad Mathematics.";
+  "AI Engineer at Makebell Ltd. shipping full-stack features and LLM agents for AI legal drafting. Final-year CSE student at the University of Dhaka.";
+const socialDescription =
+  "AI Engineer at Makebell Ltd. shipping full-stack features and LLM agents. Final-year CSE student, University of Dhaka.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -40,13 +44,13 @@ export const metadata: Metadata = {
     url: siteUrl,
     siteName: "Md. Muhaiminul Islam Ninad",
     title: "Md. Muhaiminul Islam Ninad | AI Engineer",
-    description,
+    description: socialDescription,
     // og:image comes from app/opengraph-image.tsx.
   },
   twitter: {
     card: "summary_large_image",
     title: "Md. Muhaiminul Islam Ninad | AI Engineer",
-    description,
+    description: socialDescription,
   },
 };
 
