@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 const siteUrl = "https://ninadgns.vercel.app";
 const description =
-  "AI Engineer at Makebell Ltd. building document-automation and LLM systems. Final-year CSE student at the University of Dhaka with a background in Olympiad Mathematics.";
+  "AI Engineer at Makebell Ltd. shipping full-stack features and LLM agents for an AI legal drafting platform. Final-year CSE student at the University of Dhaka with a background in Olympiad Mathematics.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -25,6 +25,7 @@ export const metadata: Metadata = {
     "AI Engineer",
     "Full Stack Developer",
     "University of Dhaka",
+    "React",
     "Next.js",
     "Python",
     "Olympiad Mathematics",

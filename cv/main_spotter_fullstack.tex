@@ -1,0 +1,331 @@
+%-------------------------
+% Resume, Md. Muhaiminul Islam Ninad (tailored: FullStack Engineer, React + Django, AI Systems, Spotter)
+%-------------------------
+
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{hyphenat}
+\usepackage{fontawesome}
+\usepackage[a4paper, top=0.46in, bottom=0.46in, left=0.46in, right=0.46in]{geometry}
+\usepackage{ragged2e}
+\input{glyphtounicode}
+
+%---------- FONT OPTIONS ----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue,
+  pdftitle={Md. Muhaiminul Islam Ninad - Resume}, pdfauthor={Md. Muhaiminul Islam Ninad},
+  pdfsubject={Curriculum Vitae}}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+
+\newcommand{\resumeItem}[1]{
+  \item\small{\justifying #1 \vspace{-2pt}}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.2in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+
+\begin{document}
+
+%---------- HEADING ----------
+
+\begin{center}
+  \textbf{\Huge \scshape Md. Muhaiminul Islam Ninad} \\ \vspace{3pt}
+  \small
+  \faMobile \hspace{.5pt} \href{tel:+8801799525733}{+880 1799-525733}
+  $|$
+  \faAt \hspace{.5pt} \href{mailto:ninadgns@gmail.com}{ninadgns@gmail.com}
+  $|$
+  % \faAt \hspace{.5pt} \href{mailto:muhaiminulislam-2021111219@cs.du.ac.bd}{muhaiminulislam-2021111219@cs.du.ac.bd}
+  % $|$
+  \faLinkedinSquare \hspace{.5pt} \href{https://www.linkedin.com/in/ninadgns}{LinkedIn}
+  $|$
+  \faGithub \hspace{.5pt} \href{https://github.com/ninadgns}{GitHub}
+  $|$
+  \faGlobe \hspace{.5pt} \href{https://ninadgns.vercel.app}{Portfolio}
+  $|$
+  \faMapMarker \hspace{.5pt} Dhaka, Bangladesh
+\end{center}
+
+
+%----------- EXPERIENCE -----------
+
+\section{Work Experience}
+\vspace{3pt}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{Makebell Ltd.}{Central, Hong Kong (Remote)}
+{AI Engineer}{June 2026 \textbf{--} Present, Full-time}
+\resumeItemListStart
+\resumeItem{Ship features \textbf{end to end} (data model, REST API, React UI) on an AI legal drafting platform built with \textbf{Next.js, TypeScript, and PostgreSQL}: multi-turn \textbf{DOCX drafting and redlining} agents on the Claude Agent SDK with multi-model orchestration (Anthropic, DeepSeek), an \textbf{OCR and data-ingestion pipeline} for messy real-world documents, and workspace sharing with View/Edit access resolved through department hierarchies.}
+\resumeItem{Designed the document provenance and lineage system ensuring cumulative and version-to-version redlines resolve against the correct baseline, with fail-safe handling for re-uploads, lineage forks, renamed files, and adversarial inputs, backed by 18+ test suites.}
+\resumeItem{Built the agent runtime's security, concurrency, and sandboxing controls, and fixed \textbf{frontend and query performance}: virtualised the PDF viewer (3,961-page file: 3.5~GB to 0.7~GB memory), cut DOCX editor scroll frames from 1.9~s to 62~ms, and added ETag caching and keyset pagination on a partial index (220~ms to 26~ms).}
+\resumeItemListEnd
+
+
+
+\resumeSubheading
+  {Askturing.AI}{California, USA (Remote)}
+  {Full Stack Software Engineer}{July 2024 \textbf{--} May 2026, Full-time}
+  \resumeItemListStart
+    \resumeItem{Architected and executed agentic AI workflows (Cursor, Claude Code) to automate routine engineering tasks and accelerate delivery across frontend, backend, and admin surfaces, collaborating in a remote-first, async global team.}
+    \resumeItem{Designed and shipped the analytics and billing system end to end in \textbf{Python, FastAPI, PostgreSQL, and React} on a \textbf{SOC 2 compliant LegalTech} platform: a rule-based \textbf{credit scoring engine} with per-feature multipliers and precedence rules, multi-tenant usage APIs, and adoption and burn-ratio dashboards.}
+    \resumeItem{Built the internal admin application for \textbf{RAG benchmarking and model comparison}, alongside user lifecycle and role-based access control (RBAC), and kept it fast as data grew by replacing \textbf{N+1 queries} with batched aggregate queries and adding a two-level cache (in-process plus shared \textbf{Redis}) with a refetch lock across pods.}
+  \resumeItemListEnd
+
+% \resumeSubheading
+%   {Anxsys Hypertech}{Dhaka, Bangladesh (Remote)}
+%   {Full Stack Software Consultant}{Feb 2026 \textbf{--} Present, Consulting}
+%   \resumeItemListStart
+%     \resumeItem{Provide high level technical consultation on fullstack architecture, driving efficient SDLC and scalable product delivery}
+%     \resumeItem{Design and optimize robust VPS deployment workflows, automating infrastructure provisioning and configuration management for reliable application hosting.}
+%   \resumeItemListEnd
+
+\resumeSubheading
+  {Bangladesh Math Olympiad}{Bangladesh}
+  {Academic Team Member}{2022 \textbf{--} Present}
+  \resumeItemListStart
+    \resumeItem{Train students at Olympiad Camps, running classes and tests.}
+    \resumeItem{Develop questions, evaluate answer scripts, and prepare results for National and Regional Olympiads.}
+  \resumeItemListEnd
+
+\resumeSubheading
+  {CSEDU Students' Club}{University of Dhaka}
+  {Secretary of Seminar \& Workshop}{2023 \textbf{--} 2025}
+  \resumeItemListStart
+    \resumeItem{Organize departmental events and collaborate with other DU departments for inter-department activities.}
+  \resumeItemListEnd
+
+\resumeSubheading
+  {Notre Dame Math Club}{Notre Dame College}
+  {Head of HR \& Coordinator}{2020 \textbf{--} 2021}
+  \resumeItemListStart
+    \resumeItem{Arranged sessions with researchers and teachers from home and abroad, and organized large-scale events to foster students' passion for mathematics.}
+  \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+
+%----------- EDUCATION -----------
+
+\section{Education}
+\vspace{3pt}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+  {University of Dhaka}{Dhaka, Bangladesh}
+  {CSE, 4th Year 1st Semester; \textbf{CGPA: 3.74/4.00}}{September 2022 \textbf{--} December 2026 (Expected)}
+
+\resumeSubheading
+  {Notre Dame College}{Dhaka, Bangladesh}
+  {HSC; \textbf{GPA: 5.00}}{2019 \textbf{--} 2021}
+
+\resumeSubHeadingListEnd
+
+
+%----------- SKILLS -----------
+
+\section{Technical Skills}
+\vspace{2pt}
+\resumeSubHeadingListStart
+\small{\item{
+  \textbf{Frontend:}{ React, Next.js, TypeScript/JavaScript, Tailwind CSS, shadcn/Radix UI, TanStack Query/Table, Recharts, Zustand; responsive layouts} \\ \vspace{3pt}
+  \textbf{Backend \& Data:}{ Python, FastAPI, REST API design, SQLAlchemy/Alembic, Drizzle ORM, PostgreSQL (query tuning, indexing), Redis, Celery/Dramatiq, Docker, Kubernetes, GitHub Actions} \\ \vspace{3pt}
+  \textbf{AI \& Other:}{ Claude Agent SDK, Anthropic/Gemini/DeepSeek APIs, RAG and vector search (ChromaDB), TensorFlow/Keras, PyTorch, ONNX Runtime; Cursor, Claude Code; C++, Java, Go, Rust, Flutter}
+}}
+\resumeSubHeadingListEnd
+
+
+%----------- ACHIEVEMENTS -----------
+
+\section{Achievements}
+\vspace{2pt}
+\resumeSubHeadingListStart
+\small{\item{
+
+  \textbf{3rd Place, \href{https://iutictfest26.tech/datathon}{Bengali LLM Hallucination Detection Challenge, IUT 12th ICT Fest 2026}:}
+  National datathon on detecting hallucinated \textbf{LLM} outputs in Bengali, finishing at \textbf{0.904 macro-F1}. Our system splits each case into grounding vs closed-book factuality over a \textbf{retrieval and LLM-as-judge} stack (Qwen2.5, BGE-M3, NLI), then settles it with a deterministic gold-answer verification layer that lifted 0.831 to 0.904 on CPU with \textbf{no fine-tuning}. Co-wrote the solution paper. \href{https://github.com/AnindyaMaster42001/DU_RDANTO_Olikbochon_Onsite_Submission}{\color{blue}GitHub} \\ \vspace{3pt}
+
+  \textbf{3rd Place, \href{https://www.codesamuraibd.net/}{Code Samurai Inter University Hackathon 2024}:}
+  Member of team \textit{DU\_Diligence}; focused on rapid development and presentation of innovative solutions for real-world problems. \\ \vspace{3pt}
+
+  \textbf{2nd Place, Al-Khwarizmi CTF Contest 2025:}
+  Secured second position as part of a four-member team in this nationwide cybersecurity CTF competition at Al-Khwarizmi Science Fest 2025. \\ \vspace{3pt}
+
+  \textbf{Top 10 Finalist, MicroOps Hackathon, CUET CSE Fest 2025:}
+  Built an end-to-end automated microservices pipeline with CI/CD, service mesh, and observability during an intensive 11-hour onsite sprint. \\ \vspace{3pt}
+
+  \textbf{1st Place, DU CTF 2024:}
+  Member of team \textit{DU\_MPLING} in this university-wide CTF competition covering reverse engineering, web exploitation, and forensics. \\ \vspace{3pt}
+
+  \textbf{Honorable Mention, \href{https://www.apmo-official.org/}{Asian Pacific Mathematical Olympiad}:}
+  Recognized as top solvers in 2019 \& 2021 in this prestigious international mathematics competition for pre-university students. \\ \vspace{3pt}
+
+  \textbf{National Round Champion, \href{https://matholympiad.org.bd/}{Bangladesh Mathematical Olympiad}:}
+  National winner in 2013, 2017 (Junior Category Champion), 2018, and 2021; competed yearly from 2013–2021 with regional wins and consistent advancement to National Camps. \\ \vspace{3pt}
+
+  \textbf{Bangladesh IMO Team Selection Test (TST), 2019 \& 2020:}
+  Qualified for and sat the national selection tests that choose Bangladesh's team for the International Mathematical Olympiad. \\ \vspace{3pt}
+
+  \textbf{2nd Place, 1st Undergraduate Research Summit 2023, University of Dhaka:}
+  Team achievement in the university's inaugural research summit. \\ \vspace{3pt}
+
+}}
+\resumeSubHeadingListEnd
+
+%----------- PROJECTS -----------
+
+\section{Projects}
+\vspace{3pt}
+\resumeSubHeadingListStart
+
+\resumeProjectHeading
+  {\textbf{Bangla Photocard Verifier} $|$ \emph{YOLOv8-cls, ONNX, FastAPI, Docker} $|$ Research $|$ Group of 4 $|$ \href{https://ninadgns-bangla-photocard-verifier.hf.space/}{\color{blue}Live Demo} $|$ \href{https://github.com/AnindyaMaster42001/Fake-Bangla-News-Photocard-Detector}{\color{blue}GitHub}}{}
+  \resumeItemListStart
+    \resumeItem{Visual-forensic classifier that flags fabricated Bengali news photocards from layout and typography cues, at \textbf{97.4\% accuracy} ($\pm$0.4\%) under leak-free group 5-fold cross-validation, folds grouped by source image so augmented variants never leak across splits.}
+    \resumeItem{Owned data and evaluation: labelled 337 originals, augmented to 3,800, and benchmarked Ultralytics YOLOv8-cls against TensorFlow/Keras ANN and CNN baselines; co-authoring an IEEE-format paper.}
+    \resumeItem{Shipped the public web app: exported to ONNX and served on onnxruntime, cutting the container from 1.9 GB to roughly 300 MB, behind FastAPI with a \textbf{feedback loop} persisting user corrections to a Hugging Face dataset.}
+  \resumeItemListEnd
+
+\resumeProjectHeading
+  {\textbf{Hopper} $|$ \emph{Go, gRPC, Python, FastAPI, K8s, NATS, PostgreSQL, Docker} $|$ Academic Project $|$ Group Project $|$ \href{https://github.com/crevios/hopper}{GitHub} }{}
+  \resumeItemListStart
+    \resumeItem{Co-architected a distributed, microservices-based \textbf{VM cloud platform}, developing a gRPC orchestration engine in Go to interface with the Kubernetes API.}
+    \resumeItem{Authored domain models with complex transactional logic, including an immutable double-entry credit ledger secured by \textbf{PostgreSQL} advisory locks.}
+    \resumeItem{Engineered automated containerization and multi-service \textbf{CI/CD} pipelines to streamline deployment across the distributed architecture.} 
+  \resumeItemListEnd
+
+\resumeProjectHeading
+  {\textbf{KitchenMate} $|$ \emph{Flutter, Dart, Firebase, Supabase} $|$ Group of 4 $|$ \href{https://github.com/ninadgns/Android-Project-Pink-Flag}{\color{blue}GitHub}}{}
+  \resumeItemListStart
+    \resumeItem{Cross-platform mobile app for smart cooking assistance with ingredient management, recipe discovery, custom timers, and offline functionality. Implemented email/Google authentication, recipe search/filter, and developed the to-do list feature.}
+    \resumeItem{\textbf{Contributed to Firebase and Supabase integration}, handling initial connection and schema setup and ongoing database maintenance.}
+  \resumeItemListEnd
+
+\resumeProjectHeading
+  {\textbf{AI Study Helper} $|$ \emph{Next.js, Python - FastAPI, ChromaDB, Gemini API} $|$ Academic Project $|$ Group of 4 $|$ \href{https://github.com/Adha-KG/}{\color{blue}GitHub}}{}
+  \resumeItemListStart
+    \resumeItem{Full-stack AI-powered document Q\&A system using \textbf{Retrieval-Augmented Generation (RAG)} for intelligent study assistance. Students can upload PDF documents and ask natural language questions to receive context-aware answers.}
+    \resumeItem{Built FastAPI backend with \textbf{ChromaDB vector database} for semantic search and \textbf{Google Gemini API} for embeddings and LLM responses. Implemented \textbf{Celery with Redis} for asynchronous PDF processing.}
+    \resumeItem{Developed Next.js frontend with Supabase authentication and persistent chat sessions. Features multi-user support with isolated document collections per user.}
+  \resumeItemListEnd
+
+\resumeProjectHeading
+  {\textbf{SecureFile} $|$ \emph{Python} $|$ Academic Project $|$ Group of 2 $|$ \href{https://github.com/mithunvoe/networking-project-backend}{Backend - GitHub} $|$ \href{https://github.com/ninadgns/networking-project-frontend}{Desktop App - GitHub} }{}
+  \resumeItemListStart
+    \resumeItem{Desktop app for storing files securely on the cloud, featuring file chunking with server-side \textbf{AES-256} encryption per chunk and a Qt-based client.}
+    \resumeItem{Built for Networking Lab, so we implemented TCP behaviours such as reliable data transfer and flow control at the application layer.}
+  \resumeItemListEnd
+  
+% \resumeProjectHeading
+%   {\textbf{TEMS Academy LMS} $|$ \emph{Next.js 14, TypeScript, Supabase} $|$ Personal Project $|$ \href{https://github.com/ninadgns/TEMS-LMS}{\color{blue}GitHub}}{}
+%   \begin{justify}
+%   \resumeItemListStart
+%     \resumeItem{Developed a full-stack Learning Management System (\textbf{LMS}) for \href{https://www.facebook.com/TEMS.MathAcademy}{TEMS Academy}, an Olympiad Math coaching center, where I used to work as an \textbf{Olympiad math trainer}.}
+%     \resumeItem{Seeing them struggling with spreadsheets' repetitive tasks, I made this to streamline managing student data (exam scores and rank history) and weekly exam result generation (PDF Resultsheet). Built with Next.js 14 and TypeScript with Supabase PostgreSQL as the database for storage, featuring a mobile-responsive UI.}
+%   \resumeItemListEnd
+%   \end{justify}
+
+% \resumeProjectHeading
+%   {\textbf{CGPA Calculator} $|$ \emph{React, HTML, CSS, JavaScript} $|$ Personal Project $|$ \href{https://github.com/ninadgns/ninadgns.github.io/tree/main/CGPASource}{\color{blue}GitHub}}{}
+%   \begin{justify}
+%   \resumeItemListStart
+%     \resumeItem{Built a \textbf{CGPA Calculator} as a hobby in my first year, using React.}
+%     \resumeItem{This is used by my batchmates regularly, featuring calculations for theory and lab subjects, including previous CGPA, with a \textbf{mobile-responsive design}.}
+%   \resumeItemListEnd
+%   \end{justify}
+
+% Dropped for the ML-role version: least relevant project.
+% \resumeProjectHeading
+%   {\textbf{Hill Climb Racing Clone} $|$ \emph{C++, SDL2, Custom Physics Engine} $|$ Academic Project $|$ Group of 2 $|$ \href{https://github.com/mithunvoe/Hill-Climb-Racing}{\color{blue}GitHub}}{}
+%   \begin{justify}
+%   \resumeItemListStart
+%     \resumeItem{2D physics-based game recreation with custom collision detection, fuel management, and audio integration. Designed and implemented the custom physics engine and Entity Component System (ECS) architecture.}
+%     \resumeItem{Developed input systems and graphics rendering components, contributing to core gameplay mechanics.}
+%   \resumeItemListEnd
+%   \end{justify}
+
+% \resumeProjectHeading
+%   {\textbf{NutriCulinary} $|$ \emph{Next.js, TypeScript, Supabase, Tailwind CSS} $|$ Academic Project $|$ Group of 2 $|$ \href{https://github.com/ninadgns/meal-planner}{\color{blue}GitHub}}{}
+%   \begin{justify}
+%   \resumeItemListStart
+%     \resumeItem{Full-stack personalized meal planning platform with recipe recommendations based on dietary preferences, nutritional goals, and available ingredients. Features an admin dashboard and real-time data synchronization.}
+%     \resumeItem{\textbf{Implemented frontend logic} for data fetching, processing, and display, including the \textbf{admin dashboard} and user authentication.}
+%     \resumeItem{Managed \textbf{Supabase integration} with Next.js, ensuring seamless data flow.}
+%   \resumeItemListEnd
+%   \end{justify}
+
+\resumeSubHeadingListEnd
+
+
+
+% \resumeProjectHeading
+%   {\textbf{BookStay - Hotel Booking App} $|$ \emph{JavaFX,  PostgreSQL, Maven} $|$ Academic Project $|$ Group of 3 $|$ \href{https://github.com/ninadgns/OOP-Project}{\color{blue}GitHub}}{}
+%   \resumeItemListStart
+%     \resumeItem{Desktop hotel booking platform with multi-user authentication, real-time chat, and comprehensive booking management. Implements Decorator, Factory, Strategy, and Observer design patterns.}
+%     \resumeItem{\textbf{Co-developed the real-time, multi-user chat functionality}, including database persistence and backend logic.}
+%     \resumeItem{\textbf{Implemented the client abstraction layer} for Supabase integration using JDBC, enabling database connectivity from Java.}
+%   \resumeItemListEnd
+
+
+\end{document}

@@ -41,7 +41,7 @@ export default function Hero() {
                         className="text-base sm:text-lg lg:text-xl mb-8 max-w-2xl mx-auto text-pretty"
                         style={{ color: 'var(--muted)' }}
                     >
-                        AI Engineer at Makebell Ltd., building the document-automation agent and LLM orchestration behind an AI legal drafting platform. Final-year CSE student at the University of Dhaka with a strong background in Olympiad Mathematics and problem-solving.
+                        AI Engineer at Makebell Ltd., shipping full-stack features (data model, REST API, React UI) and the LLM agents behind an AI legal drafting platform. Final-year CSE student at the University of Dhaka with a strong background in Olympiad Mathematics and problem-solving.
                     </motion.p>
                     <motion.div
                         variants={itemVariants}

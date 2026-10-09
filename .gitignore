@@ -40,8 +40,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# LaTeX CV lives in cv/ (source: cv/main.tex, role-tailored variant: cv/main_spotter.tex).
-# The copy the site serves is public/Md_Muhaiminul_Islam_Ninad_CV.pdf and IS tracked.
+# LaTeX CV lives in cv/ (source: cv/main.tex; role-tailored variants: cv/main_spotter*.tex).
+# The copy the site serves is public/Md_Muhaiminul_Islam_Ninad_CV.pdf, built from
+# cv/main_spotter_fullstack.tex, and IS tracked.
 /cv/*.aux
 /cv/*.log
 /cv/*.out

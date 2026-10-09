@@ -21,13 +21,14 @@ export const itemVariants = {
   }
 };
 
-// Groups mirror the "Technical Skills" section of cv/main.tex, but each list is
-// the headline subset rather than the full CV line: the About section is a
-// three-column grid, and a complete list makes this column twice the height of
-// the two beside it. The PDF carries the exhaustive version.
-export const languages = ['Python', 'TypeScript', 'C++', 'Java', 'Go', 'Rust', 'SQL', 'LaTeX']
-export const aiAndMl = ['Claude Agent SDK', 'RAG', 'PyTorch', 'TensorFlow/Keras', 'ONNX Runtime']
-export const engineering = ['FastAPI', 'Next.js/React', 'PostgreSQL', 'Docker', 'Kubernetes', 'gRPC']
+// Groups mirror the "Technical Skills" section of cv/main_spotter_fullstack.tex
+// (the CV the site serves), but each list is the headline subset rather than the
+// full CV line: the About section is a three-column grid, and a complete list
+// makes this column twice the height of the two beside it. The PDF carries the
+// exhaustive version.
+export const frontend = ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'shadcn/Radix UI', 'TanStack Query']
+export const backendAndData = ['Python', 'FastAPI', 'REST APIs', 'PostgreSQL', 'Redis', 'Docker', 'Kubernetes']
+export const aiAndOther = ['Claude Agent SDK', 'RAG', 'PyTorch', 'ONNX Runtime', 'C++', 'Go']
 export const experience = [
   {
     role: "AI Engineer",
@@ -35,9 +36,9 @@ export const experience = [
     location: "Central, Hong Kong (Remote)",
     duration: "June 2026 - Present, Full-time",
     details: [
-      "Built core components of the document-automation agent for an AI legal drafting platform: multi-turn DOCX drafting and redlining workflows using the Claude Agent SDK, producing Word-native tracked-change deliverables.",
+      "Ship features end to end (data model, REST API, React UI) on an AI legal drafting platform built with Next.js, TypeScript, and PostgreSQL: multi-turn DOCX drafting and redlining agents on the Claude Agent SDK with multi-model orchestration (Anthropic, DeepSeek), an OCR and data-ingestion pipeline for messy real-world documents, and workspace sharing with View/Edit access resolved through department hierarchies.",
       "Designed the document provenance and lineage system ensuring cumulative and version-to-version redlines resolve against the correct baseline, with fail-safe handling for re-uploads, lineage forks, renamed files, and adversarial inputs, backed by 18+ test suites.",
-      "Built the OCR/ingestion pipeline and multi-model LLM orchestration across Anthropic and DeepSeek, alongside the in-browser DOCX viewer/editor and agent runtime security, concurrency, and sandboxing controls."
+      "Built the agent runtime's security, concurrency, and sandboxing controls, and fixed frontend and query performance: virtualised the PDF viewer (3,961-page file: 3.5 GB to 0.7 GB memory), cut DOCX editor scroll frames from 1.9 s to 62 ms, and added ETag caching and keyset pagination on a partial index (220 ms to 26 ms)."
     ]
   },
   {
@@ -46,9 +47,9 @@ export const experience = [
     location: "California, USA (Remote)",
     duration: "July 2024 - May 2026, Full-time",
     details: [
-      "Architected and executed agentic AI workflows (Cursor, Claude Code) to automate routine engineering tasks and accelerate delivery across frontend, backend, and admin surfaces.",
-      "Designed and shipped large-scale analytics and billing-intelligence features (multi-tenant usage and credit APIs) in Python, FastAPI, and PostgreSQL on a SOC 2 compliant LegalTech platform.",
-      "Built the internal admin application for RAG benchmarking and model evaluation, giving the team a repeatable way to compare retrieval and model configurations, alongside user lifecycle and role-based access control (RBAC), collaborating in a remote-first, async global team."
+      "Architected and executed agentic AI workflows (Cursor, Claude Code) to automate routine engineering tasks and accelerate delivery across frontend, backend, and admin surfaces, collaborating in a remote-first, async global team.",
+      "Designed and shipped the analytics and billing system end to end in Python, FastAPI, PostgreSQL, and React on a SOC 2 compliant LegalTech platform: a rule-based credit scoring engine with per-feature multipliers and precedence rules, multi-tenant usage APIs, and adoption and burn-ratio dashboards.",
+      "Built the internal admin application for RAG benchmarking and model comparison, alongside user lifecycle and role-based access control (RBAC), and kept it fast as data grew by replacing N+1 queries with batched aggregate queries and adding a two-level cache (in-process plus shared Redis) with a refetch lock across pods."
     ]
   },
   {
