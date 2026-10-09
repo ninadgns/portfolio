@@ -1,5 +1,5 @@
 
-import { containerVariants, itemVariants } from '@/app/constants';
+import { heroContainerVariants, heroItemVariants } from '@/app/constants';
 import { motion } from 'framer-motion';
 import { FileDown, Github, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
 import Image from 'next/image';
@@ -12,10 +12,10 @@ export default function Hero() {
                 <motion.div
                     initial="hidden"
                     animate="visible"
-                    variants={containerVariants}
+                    variants={heroContainerVariants}
                     className="text-center"
                 >
-                    <motion.div variants={itemVariants} className="mb-6 flex flex-col items-center">
+                    <motion.div variants={heroItemVariants} className="mb-6 flex flex-col items-center">
                         <Image
                             src="/profile.jpg"
                             alt="Md. Muhaiminul Islam Ninad"
@@ -30,21 +30,21 @@ export default function Hero() {
                         />
                     </motion.div>
                     <motion.h1
-                        variants={itemVariants}
+                        variants={heroItemVariants}
                         className="text-4xl sm:text-6xl lg:text-7xl font-black mb-5 tracking-tight text-balance"
                         style={{ color: 'var(--foreground)' }}
                     >
                         Md. Muhaiminul Islam <span className="gradient-text">Ninad</span>
                     </motion.h1>
                     <motion.p
-                        variants={itemVariants}
+                        variants={heroItemVariants}
                         className="text-base sm:text-lg lg:text-xl mb-8 max-w-2xl mx-auto text-pretty"
                         style={{ color: 'var(--muted)' }}
                     >
                         AI Engineer at Makebell Ltd., shipping full-stack features and LLM agents for AI legal drafting. Final-year CSE student at the University of Dhaka with an Olympiad Mathematics background.
                     </motion.p>
                     <motion.div
-                        variants={itemVariants}
+                        variants={heroItemVariants}
                         className="flex flex-wrap justify-center gap-4 mb-8"
                     >
                         <Link
@@ -84,7 +84,7 @@ export default function Hero() {
                         </Link>
                     </motion.div>
                     <motion.div
-                        variants={itemVariants}
+                        variants={heroItemVariants}
                         className="flex items-center justify-center gap-2"
                         style={{ color: 'var(--muted)' }}
                     >

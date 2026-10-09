@@ -1,6 +1,5 @@
-// Kept short: with 12 achievement cards a 0.1s stagger meant the last card
-// only finished ~1.8s after the section scrolled into view.
-export const containerVariants = {
+// The hero fades in on load, which plays whether or not anyone scrolls.
+export const heroContainerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -10,7 +9,7 @@ export const containerVariants = {
   }
 };
 
-export const itemVariants = {
+export const heroItemVariants = {
   hidden: { opacity: 0, y: 16 },
   visible: {
     opacity: 1,
@@ -20,6 +19,65 @@ export const itemVariants = {
     }
   }
 };
+
+// Sections below the hero reveal on scroll, so they only slide and never fade:
+// a fade starts at opacity 0, which leaves every section blank in a full-page
+// screenshot taken without scrolling (how screenshot-based agents see a page).
+// Kept short: with 12 achievement cards a 0.1s stagger meant the last card
+// only finished ~1.8s after the section scrolled into view.
+export const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.05
+    }
+  }
+};
+
+export const itemVariants = {
+  hidden: { y: 16 },
+  visible: {
+    y: 0,
+    transition: {
+      duration: 0.35
+    }
+  }
+};
+
+// Shared facts about the person, used by the JSON-LD block and the plain-text
+// routes (/llms.txt, /cv.md) so they say what the page says.
+export const siteUrl = 'https://ninadgns.vercel.app'
+export const cvPath = '/Md_Muhaiminul_Islam_Ninad_CV.pdf'
+export const profile = {
+  name: 'Md. Muhaiminul Islam Ninad',
+  alternateNames: ['Muhaiminul Islam Ninad', 'Ninad', 'ninadgns'],
+  jobTitle: 'AI Engineer',
+  employer: 'Makebell Ltd.',
+  summary:
+    'AI Engineer at Makebell Ltd., shipping full-stack features and LLM agents for AI legal drafting. Final-year CSE student at the University of Dhaka with an Olympiad Mathematics background.',
+  email: 'ninadgns@gmail.com',
+  phone: '+880 1799-525733',
+  location: 'Dhaka, Bangladesh',
+  linkedin: 'https://www.linkedin.com/in/ninadgns',
+  github: 'https://github.com/ninadgns',
+}
+
+export const schools = [
+  {
+    name: 'University of Dhaka',
+    place: 'Dhaka, Bangladesh',
+    programme: 'CSE, 4th Year 1st Semester',
+    grade: 'CGPA: 3.74/4.00',
+    dates: 'September 2022 - December 2026 (Expected)',
+  },
+  {
+    name: 'Notre Dame College',
+    place: 'Dhaka, Bangladesh',
+    programme: 'HSC',
+    grade: 'GPA: 5.00',
+    dates: '2019 - 2021',
+  },
+]
 
 // Groups mirror the "Technical Skills" section of cv/main_spotter_fullstack.tex
 // (the CV the site serves), but each list is the headline subset rather than the

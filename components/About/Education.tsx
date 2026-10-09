@@ -1,23 +1,6 @@
-import { itemVariants } from '@/app/constants';
+import { itemVariants, schools } from '@/app/constants';
 import { motion } from 'framer-motion';
 import { GraduationCap } from 'lucide-react';
-
-const schools = [
-  {
-    name: 'University of Dhaka',
-    place: 'Dhaka, Bangladesh',
-    programme: 'CSE, 4th Year 1st Semester',
-    grade: 'CGPA: 3.74/4.00',
-    dates: 'September 2022 - December 2026 (Expected)',
-  },
-  {
-    name: 'Notre Dame College',
-    place: 'Dhaka, Bangladesh',
-    programme: 'HSC',
-    grade: 'GPA: 5.00',
-    dates: '2019 - 2021',
-  },
-];
 
 export default function Education() {
     return (
