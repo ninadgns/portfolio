@@ -17,7 +17,7 @@ const blue = '#2563eb';
 const yellow = '#facc15';
 const muted = '#374151';
 
-const chips = ['React', 'Python', 'PostgreSQL', 'LLM agents'];
+const chips = ['Python', 'TypeScript', 'LLM agents', 'RAG'];
 
 export default async function Image() {
   const [black, medium, photo] = await Promise.all([
@@ -85,7 +85,7 @@ export default async function Image() {
             </span>
           </div>
           <div style={{ display: 'flex', marginTop: 28, fontSize: 28, fontWeight: 500, color: muted, lineHeight: 1.3, textWrap: 'balance' }}>
-            Full-stack features and LLM agents for AI legal drafting
+            LLM agents and document automation for AI legal drafting
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginTop: 36 }}>
             {chips.map((chip) => (

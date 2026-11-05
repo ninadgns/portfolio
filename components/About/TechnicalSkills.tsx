@@ -1,4 +1,4 @@
-import { aiAndOther, backendAndData, frontend, itemVariants } from '@/app/constants';
+import { aiAndMl, engineering, itemVariants, languages } from '@/app/constants';
 import { motion } from 'framer-motion';
 import { Code } from 'lucide-react';
 
@@ -9,18 +9,18 @@ const chipBorder = { border: 'var(--border-width) solid var(--border)' };
 // padding on its own, which is what pushed this column past the two beside it.
 const groups = [
   {
-    heading: 'Frontend',
-    items: frontend,
+    heading: 'Languages',
+    items: languages,
     style: { ...chipBorder, backgroundColor: 'var(--yellow)', color: 'var(--foreground)' },
   },
   {
-    heading: 'Backend & Data',
-    items: backendAndData,
+    heading: 'AI & ML',
+    items: aiAndMl,
     style: { ...chipBorder, backgroundColor: 'var(--accent)', color: 'white' },
   },
   {
-    heading: 'AI & Other',
-    items: aiAndOther,
+    heading: 'Engineering',
+    items: engineering,
     style: { ...chipBorder, backgroundColor: 'var(--background)', color: 'var(--foreground)' },
   },
 ];

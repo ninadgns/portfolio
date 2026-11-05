@@ -1,10 +1,10 @@
 import {
   achievements,
-  aiAndOther,
-  backendAndData,
+  aiAndMl,
   cvPath,
+  engineering,
   experience,
-  frontend,
+  languages,
   profile,
   projects,
   schools,
@@ -46,9 +46,9 @@ export function cvMarkdown(): string {
 
   push('## Technical Skills', '');
   push(
-    `- Frontend: ${frontend.join(', ')}`,
-    `- Backend & Data: ${backendAndData.join(', ')}`,
-    `- AI & Other: ${aiAndOther.join(', ')}`,
+    `- Languages: ${languages.join(', ')}`,
+    `- AI & ML: ${aiAndMl.join(', ')}`,
+    `- Engineering: ${engineering.join(', ')}`,
     '',
   );
 

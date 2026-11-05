@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { aiAndOther, backendAndData, frontend, profile, siteUrl } from "./constants";
+import { aiAndMl, engineering, languages, profile, siteUrl } from "./constants";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,9 +16,9 @@ const geistMono = Geist_Mono({
 // Google cuts descriptions off around 155 characters and social previews
 // around 125, so each gets a version that fits.
 const description =
-  "AI Engineer at Makebell Ltd. shipping full-stack features and LLM agents for AI legal drafting. Final-year CSE student at the University of Dhaka.";
+  "AI Engineer at Makebell Ltd. building LLM agents and document automation for AI legal drafting. Final-year CSE student at the University of Dhaka.";
 const socialDescription =
-  "AI Engineer at Makebell Ltd. shipping full-stack features and LLM agents. Final-year CSE student, University of Dhaka.";
+  "AI Engineer at Makebell Ltd. building LLM agents for AI legal drafting. Final-year CSE student, University of Dhaka.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -74,7 +74,7 @@ const jsonLd = {
     alumniOf: { "@type": "EducationalOrganization", name: "Notre Dame College" },
     address: { "@type": "PostalAddress", addressLocality: "Dhaka", addressCountry: "BD" },
     sameAs: [profile.linkedin, profile.github],
-    knowsAbout: [...frontend, ...backendAndData, ...aiAndOther],
+    knowsAbout: [...languages, ...aiAndMl, ...engineering],
   },
 };
 

@@ -23,8 +23,8 @@ export const heroItemVariants = {
 // Sections below the hero reveal on scroll, so they only slide and never fade:
 // a fade starts at opacity 0, which leaves every section blank in a full-page
 // screenshot taken without scrolling (how screenshot-based agents see a page).
-// Kept short: with 12 achievement cards a 0.1s stagger meant the last card
-// only finished ~1.8s after the section scrolled into view.
+// Kept short: with 13 achievement cards a 0.1s stagger meant the last card
+// only finished ~1.9s after the section scrolled into view.
 export const containerVariants = {
   hidden: {},
   visible: {
@@ -54,7 +54,7 @@ export const profile = {
   jobTitle: 'AI Engineer',
   employer: 'Makebell Ltd.',
   summary:
-    'AI Engineer at Makebell Ltd., shipping full-stack features and LLM agents for AI legal drafting. Final-year CSE student at the University of Dhaka with an Olympiad Mathematics background.',
+    'AI Engineer at Makebell Ltd., building the document-automation agent behind an AI legal drafting platform. Final-year CSE student at the University of Dhaka with an Olympiad Mathematics background.',
   email: 'ninadgns@gmail.com',
   phone: '+880 1799-525733',
   location: 'Dhaka, Bangladesh',
@@ -79,14 +79,14 @@ export const schools = [
   },
 ]
 
-// Groups mirror the "Technical Skills" section of cv/main_spotter_fullstack.tex
+// Groups follow the "Technical Skills" section of cv/main.tex
 // (the CV the site serves), but each list is the headline subset rather than the
 // full CV line: the About section is a three-column grid, and a complete list
 // makes this column twice the height of the two beside it. The PDF carries the
 // exhaustive version.
-export const frontend = ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'shadcn/Radix UI', 'TanStack Query']
-export const backendAndData = ['Python', 'FastAPI', 'REST APIs', 'PostgreSQL', 'Redis', 'Docker', 'Kubernetes']
-export const aiAndOther = ['Claude Agent SDK', 'RAG', 'PyTorch', 'ONNX Runtime', 'C++', 'Go']
+export const languages = ['Python', 'TypeScript', 'C++', 'Java', 'Go', 'Rust', 'SQL', 'LaTeX']
+export const aiAndMl = ['Claude Agent SDK', 'RAG', 'PyTorch', 'TensorFlow/Keras', 'ONNX Runtime']
+export const engineering = ['FastAPI', 'Next.js/React', 'PostgreSQL', 'Docker', 'Kubernetes', 'gRPC']
 export const experience = [
   {
     role: "AI Engineer",
@@ -94,9 +94,9 @@ export const experience = [
     location: "Central, Hong Kong (Remote)",
     duration: "June 2026 - Present, Full-time",
     details: [
-      "Ship features end to end (data model, REST API, React UI) on an AI legal drafting platform built with Next.js, TypeScript, and PostgreSQL: multi-turn DOCX drafting and redlining agents on the Claude Agent SDK with multi-model orchestration (Anthropic, DeepSeek), an OCR and data-ingestion pipeline for messy real-world documents, and workspace sharing with View/Edit access resolved through department hierarchies.",
+      "Built core components of the document-automation agent for an AI legal drafting platform: multi-turn DOCX drafting and redlining workflows using the Claude Agent SDK, producing Word-native tracked-change deliverables.",
       "Designed the document provenance and lineage system ensuring cumulative and version-to-version redlines resolve against the correct baseline, with fail-safe handling for re-uploads, lineage forks, renamed files, and adversarial inputs, backed by 18+ test suites.",
-      "Built the agent runtime's security, concurrency, and sandboxing controls, and fixed frontend and query performance: virtualised the PDF viewer (3,961-page file: 3.5 GB to 0.7 GB memory), cut DOCX editor scroll frames from 1.9 s to 62 ms, and added ETag caching and keyset pagination on a partial index (220 ms to 26 ms)."
+      "Built the OCR/ingestion pipeline and multi-model LLM orchestration across Anthropic and DeepSeek, alongside the in-browser DOCX viewer/editor and agent runtime security, concurrency, and sandboxing controls."
     ]
   },
   {
@@ -105,9 +105,9 @@ export const experience = [
     location: "California, USA (Remote)",
     duration: "July 2024 - May 2026, Full-time",
     details: [
-      "Architected and executed agentic AI workflows (Cursor, Claude Code) to automate routine engineering tasks and accelerate delivery across frontend, backend, and admin surfaces, collaborating in a remote-first, async global team.",
-      "Designed and shipped the analytics and billing system end to end in Python, FastAPI, PostgreSQL, and React on a SOC 2 compliant LegalTech platform: a rule-based credit scoring engine with per-feature multipliers and precedence rules, multi-tenant usage APIs, and adoption and burn-ratio dashboards.",
-      "Built the internal admin application for RAG benchmarking and model comparison, alongside user lifecycle and role-based access control (RBAC), and kept it fast as data grew by replacing N+1 queries with batched aggregate queries and adding a two-level cache (in-process plus shared Redis) with a refetch lock across pods."
+      "Architected and executed agentic AI workflows (Cursor, Claude Code) to automate routine engineering tasks and accelerate delivery across frontend, backend, and admin surfaces.",
+      "Designed and shipped large-scale analytics and billing-intelligence features (multi-tenant usage and credit APIs) in Python, FastAPI, and PostgreSQL on a SOC 2 compliant LegalTech platform.",
+      "Built the internal admin application for RAG benchmarking and model evaluation, giving the team a repeatable way to compare retrieval and model configurations, alongside user lifecycle and role-based access control (RBAC), collaborating in a remote-first, async global team."
     ]
   },
   {
@@ -261,6 +261,14 @@ export const projects = [
 // ("2nd Runners Up"), so a reader comparing page and PDF sees the same rank.
 // DU CTF 2023 and NHSPC 2017 are live here but cut from the CV for length.
 export const achievements = [
+  {
+    title: "Champion at Robi Axiata Data Privacy Avengers 2026",
+    details: [
+      "Won first place out of 700 teams as team 'Thought Police' in this national case competition run by Robi Axiata, advancing through a concept paper (Top 20), a pitch at Robi Corporate Office (Top 10) and the Grand Finale.",
+      "Designed SHOCHCHO, a six-layer privacy control plane for a telecom operator to comply with Bangladesh's Personal Data Protection Act 2026: a consent-enforcing gateway as the only exit for customer data to vendors and AI models, revocable AI Passports for model governance, and monthly data-use statements for customers on app and USSD.",
+      "Presented the vendor, AI governance, accountability and financial sections to Robi senior leadership and defended the design in live Q&A."
+    ]
+  },
   {
     title: "3rd Place at Bengali LLM Hallucination Detection Challenge, IUT 12th ICT Fest 2026",
     link: "https://iutictfest26.tech/datathon",
