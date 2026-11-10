@@ -9,6 +9,8 @@
 % Conventions:
 %   [ML VARIANT] - ML/research-role phrasing of the active line above it.
 %                  To use: comment the active line, uncomment this one.
+%   [FULL-STACK VARIANT] - full-stack-role phrasing of the active line above
+%                  it (React, REST APIs, performance). Same usage as above.
 %   [OPTIONAL]   - real content deliberately left out of the 2-page build.
 %                  Uncomment when a longer CV or a different emphasis is wanted.
 %-------------------------
@@ -130,12 +132,16 @@
 {AI Engineer}{June 2026 \textbf{--} Present, Full-time}
 \resumeItemListStart
 \resumeItem{Built core components of the document-automation agent for an AI legal drafting platform: multi-turn \textbf{DOCX drafting and redlining} workflows using the Claude Agent SDK, producing Word-native tracked-change deliverables.}
+% [FULL-STACK VARIANT] leads with end-to-end feature ownership and the web stack:
+% \resumeItem{Ship features \textbf{end to end} (data model, REST API, React UI) on an AI legal drafting platform built with \textbf{Next.js, TypeScript, and PostgreSQL}: multi-turn \textbf{DOCX drafting and redlining} agents on the Claude Agent SDK with multi-model orchestration (Anthropic, DeepSeek), an \textbf{OCR and data-ingestion pipeline} for messy real-world documents, and workspace sharing with View/Edit access resolved through department hierarchies.}
 % [ML VARIANT] leads with shipping models to production rather than with the feature:
 % \resumeItem{Ship \textbf{LLM-powered features into production} for an AI legal drafting platform: multi-turn \textbf{DOCX drafting and redlining} agents built on the Claude Agent SDK, producing Word-native tracked-change deliverables.}
 \resumeItem{Designed the document provenance and lineage system ensuring cumulative and version-to-version redlines resolve against the correct baseline, with fail-safe handling for re-uploads, lineage forks, renamed files, and adversarial inputs, backed by 18+ test suites.}
 \resumeItem{Built the OCR/ingestion pipeline and multi-model LLM orchestration across Anthropic and DeepSeek, alongside the in-browser DOCX viewer/editor and agent runtime security, concurrency, and sandboxing controls.}
 % [ML VARIANT] frames ingestion as producing model input, drops the DOCX viewer:
 % \resumeItem{Built the \textbf{OCR and data-ingestion pipeline} that turns messy real-world documents into structured model input, plus \textbf{multi-model LLM orchestration} across Anthropic and DeepSeek, and the agent runtime's security, concurrency, and sandboxing controls.}
+% [FULL-STACK VARIANT] trades the OCR/LLM detail for measured performance work:
+% \resumeItem{Built the agent runtime's security, concurrency, and sandboxing controls, and fixed \textbf{frontend and query performance}: virtualised the PDF viewer (3,961-page file: 3.5~GB to 0.7~GB memory), cut DOCX editor scroll frames from 1.9~s to 62~ms, and added ETag caching and keyset pagination on a partial index (220~ms to 26~ms).}
 \resumeItemListEnd
 
 
@@ -145,8 +151,14 @@
   {Full Stack Software Engineer}{July 2024 \textbf{--} May 2026, Full-time}
   \resumeItemListStart
     \resumeItem{Architected and executed agentic AI workflows (Cursor, Claude Code) to automate routine engineering tasks and accelerate delivery across frontend, backend, and admin surfaces.}
+    % [FULL-STACK VARIANT] adds the remote-team clause here instead of on the admin bullet:
+    % \resumeItem{Architected and executed agentic AI workflows (Cursor, Claude Code) to automate routine engineering tasks and accelerate delivery across frontend, backend, and admin surfaces, collaborating in a remote-first, async global team.}
     \resumeItem{Designed and shipped large-scale analytics and billing-intelligence features (multi-tenant usage and credit APIs) in \textbf{Python, FastAPI, and PostgreSQL} on a \textbf{SOC 2 compliant LegalTech} platform.}
+    % [FULL-STACK VARIANT] names the credit scoring engine and dashboards:
+    % \resumeItem{Designed and shipped the analytics and billing system end to end in \textbf{Python, FastAPI, PostgreSQL, and React} on a \textbf{SOC 2 compliant LegalTech} platform: a rule-based \textbf{credit scoring engine} with per-feature multipliers and precedence rules, multi-tenant usage APIs, and adoption and burn-ratio dashboards.}
     \resumeItem{Built the internal admin application for \textbf{RAG benchmarking and model evaluation}, giving the team a repeatable way to compare retrieval and model configurations, alongside user lifecycle and role-based access control (RBAC), collaborating in a remote-first, async global team.}
+    % [FULL-STACK VARIANT] adds the query and caching performance work:
+    % \resumeItem{Built the internal admin application for \textbf{RAG benchmarking and model comparison}, alongside user lifecycle and role-based access control (RBAC), and kept it fast as data grew by replacing \textbf{N+1 queries} with batched aggregate queries and adding a two-level cache (in-process plus shared \textbf{Redis}) with a refetch lock across pods.}
   \resumeItemListEnd
 
 % [OPTIONAL] consulting role, omitted to keep the experience section focused:
@@ -215,6 +227,12 @@
 %   \textbf{Machine Learning:}{ Python, TensorFlow/Keras, PyTorch (Ultralytics), ONNX Runtime, NumPy; dataset preparation and cleaning, cross-validation, model evaluation, production deployment} \\ \vspace{3pt}
 %   \textbf{LLMs, Data \& Engineering:}{ Anthropic Claude, Gemini, DeepSeek, RAG and vector search (ChromaDB), OCR pipelines, PostgreSQL/SQL, FastAPI, Docker, Git/GitHub, React/Next.js, C++, Java, Rust, LaTeX}
 % }}
+% [FULL-STACK VARIANT] three role-shaped groups, leading with the web stack:
+% \small{\item{
+%   \textbf{Frontend:}{ React, Next.js, TypeScript/JavaScript, Tailwind CSS, shadcn/Radix UI, TanStack Query/Table, Recharts, Zustand; responsive layouts} \\ \vspace{3pt}
+%   \textbf{Backend \& Data:}{ Python, FastAPI, REST API design, SQLAlchemy/Alembic, Drizzle ORM, PostgreSQL (query tuning, indexing), Redis, Celery/Dramatiq, Docker, Kubernetes, GitHub Actions} \\ \vspace{3pt}
+%   \textbf{AI \& Other:}{ Claude Agent SDK, Anthropic/Gemini/DeepSeek APIs, RAG and vector search (ChromaDB), TensorFlow/Keras, PyTorch, ONNX Runtime; Cursor, Claude Code; C++, Java, Go, Rust, Flutter}
+% }}
 \resumeSubHeadingListEnd
 
 
@@ -232,7 +250,9 @@
 \small{\item{
 
   \textbf{Champion, Robi Axiata Data Privacy Avengers 2026:}
-  National case competition run by Robi Axiata, placing first out of \textbf{700 teams} as team \textit{Thought Police}. Designed \textbf{SHOCHCHO}, a six-layer privacy control plane for telecom compliance with Bangladesh's \textbf{Personal Data Protection Act 2026}: a consent-enforcing gateway as the only exit for customer data to vendors and \textbf{AI models}, and revocable \textbf{AI Passports} for model governance. Pitched to Robi senior leadership and defended the design in live Q\&A. \\ \vspace{2pt}
+  National case competition, placing first out of \textbf{700 teams}. Designed SHOCHCHO, a privacy control plane for telecom compliance with Bangladesh's Personal Data Protection Act 2026, covering consent-enforced data sharing and AI model governance. \\ \vspace{2pt}
+% [OPTIONAL] longer version, cut to three lines:
+%  National case competition run by Robi Axiata, placing first out of \textbf{700 teams} as team \textit{Thought Police}. Designed \textbf{SHOCHCHO}, a six-layer privacy control plane for telecom compliance with Bangladesh's \textbf{Personal Data Protection Act 2026}: a consent-enforcing gateway as the only exit for customer data to vendors and \textbf{AI models}, and revocable \textbf{AI Passports} for model governance. Pitched to Robi senior leadership and defended the design in live Q\&A. \\ \vspace{2pt}
 
   \textbf{3rd Place, \href{https://iutictfest26.tech/datathon}{Bengali LLM Hallucination Detection Challenge, IUT 12th ICT Fest 2026}:}
   National datathon on detecting hallucinated \textbf{LLM} outputs in Bengali, finishing at \textbf{0.904 macro-F1}. Our system splits each case into grounding vs closed-book factuality over a \textbf{retrieval and LLM-as-judge} stack (Qwen2.5, BGE-M3, NLI), then settles it with a deterministic gold-answer verification layer that lifted 0.831 to 0.904 on CPU with \textbf{no fine-tuning}. Co-wrote the solution paper. \href{https://github.com/AnindyaMaster42001/DU_RDANTO_Olikbochon_Onsite_Submission}{\color{blue}GitHub} \\ \vspace{2pt}
