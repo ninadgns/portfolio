@@ -264,9 +264,11 @@ export const achievements = [
   {
     title: "Champion at Robi Axiata Data Privacy Avengers 2026",
     details: [
-      "Won first place out of 700 teams as team 'Thought Police' in this national case competition run by Robi Axiata, advancing through a concept paper (Top 20), a pitch at Robi Corporate Office (Top 10) and the Grand Finale.",
-      "Designed SHOCHCHO, a six-layer privacy control plane for a telecom operator to comply with Bangladesh's Personal Data Protection Act 2026: a consent-enforcing gateway as the only exit for customer data to vendors and AI models, revocable AI Passports for model governance, and monthly data-use statements for customers on app and USSD.",
-      "Presented the vendor, AI governance, accountability and financial sections to Robi senior leadership and defended the design in live Q&A."
+      "Won first place out of 700 teams in this national case competition by designing SHOCHCHO, a privacy control plane for a telecom operator to comply with Bangladesh's Personal Data Protection Act 2026."
+      // Full version, kept for reference:
+      // "Won first place out of 700 teams as team 'Thought Police' in this national case competition run by Robi Axiata, advancing through a concept paper (Top 20), a pitch at Robi Corporate Office (Top 10) and the Grand Finale.",
+      // "Designed SHOCHCHO, a six-layer privacy control plane for a telecom operator to comply with Bangladesh's Personal Data Protection Act 2026: a consent-enforcing gateway as the only exit for customer data to vendors and AI models, revocable AI Passports for model governance, and monthly data-use statements for customers on app and USSD.",
+      // "Presented the vendor, AI governance, accountability and financial sections to Robi senior leadership and defended the design in live Q&A."
     ]
   },
   {
@@ -274,8 +276,10 @@ export const achievements = [
     link: "https://iutictfest26.tech/datathon",
     github: "https://github.com/AnindyaMaster42001/DU_RDANTO_Olikbochon_Onsite_Submission",
     details: [
-      "National datathon on detecting hallucinated large language model outputs in Bengali, finishing at 0.904 macro-F1.",
-      "Our system splits each case into grounding versus closed-book factuality over a retrieval and LLM-as-judge stack (Qwen2.5, BGE-M3, NLI), then settles it with a deterministic gold-answer verification layer that lifted 0.831 to 0.904 on CPU with no fine-tuning. Co-wrote the solution paper."
+      "National datathon on detecting hallucinated LLM outputs in Bengali, reaching 0.904 macro-F1 with a retrieval and LLM-as-judge stack on CPU with no fine-tuning."
+      // Full version, kept for reference:
+      // "National datathon on detecting hallucinated large language model outputs in Bengali, finishing at 0.904 macro-F1.",
+      // "Our system splits each case into grounding versus closed-book factuality over a retrieval and LLM-as-judge stack (Qwen2.5, BGE-M3, NLI), then settles it with a deterministic gold-answer verification layer that lifted 0.831 to 0.904 on CPU with no fine-tuning. Co-wrote the solution paper."
     ]
   },
   {
