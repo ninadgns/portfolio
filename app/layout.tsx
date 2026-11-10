@@ -45,7 +45,23 @@ export const metadata: Metadata = {
     siteName: "Md. Muhaiminul Islam Ninad",
     title: "Md. Muhaiminul Islam Ninad | AI Engineer",
     description: socialDescription,
-    // og:image comes from app/opengraph-image.tsx.
+    // og:image comes from app/opengraph-image.tsx and stays the fallback:
+    // platforms that don't play og:video (LinkedIn, X, Slack, WhatsApp)
+    // ignore it and show the image card instead.
+    // public/og-video.mp4 is a 10s muted, seamless loop of tiles turning in
+    // waves in the site's colours, H.264 in MP4 since that is what players
+    // that do support it expect.
+    videos: [
+      {
+        // Absolute: Next leaves video URLs as written, and scrapers
+        // cannot resolve a relative one.
+        url: `${siteUrl}/og-video.mp4`,
+        secureUrl: `${siteUrl}/og-video.mp4`,
+        type: "video/mp4",
+        width: 1280,
+        height: 720,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
